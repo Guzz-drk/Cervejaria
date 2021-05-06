@@ -12,7 +12,7 @@
     <label for="">Nome</label>
     <input type="text" id="nome" name="nome">
     <label for="">Data de Nascimento</label>
-    <input type="date" id="dataNascimento" name="dataNascimento">
+    <input type="date" id="dataNascimento" name="dataNascimento" max="<?php echo date('Y-m-d', strtotime('-18 year')); ?>">
     <label for="">E-mail</label>
     <input type="email" id="emailUsuario" name="emailUsuario">
     <label for="">Senha</label>
