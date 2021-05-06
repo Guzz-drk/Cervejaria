@@ -1,12 +1,12 @@
 <?php
 
 class Usuario {
-    private $nome;
-    private $dataNascimento;
-    private $emailUsuario;
-    private $senhaUsuario;
-    private $brassagenscont;
-    private $cursoscerv;
+    var $nome;
+    var $dataNascimento;
+    var $emailUsuario;
+    var $senhaUsuario;
+    var $brassagenscont;
+    var $cursoscerv;
 
 
 

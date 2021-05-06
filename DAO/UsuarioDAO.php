@@ -10,7 +10,7 @@ class UsuarioDAO{
     public function create($usuario){
         try {
             $stmt = $this->connection->prepare(
-                "INSERT INTO usuarios (nome,dataNascimento,email,senha,brassagenscont,cursoscerv) VALUES(?,?,?,?,?,?)");
+                "INSERT INTO usuarios (nome,dataNasc,email,senha,numbrassagens,cursoscerv) VALUES(?,?,?,?,?,?)");
             $stmt->bindValue(1,$usuario->nome);
             $stmt->bindValue(2,$usuario->dataNascimento);
             $stmt->bindValue(3,$usuario->emailUsuario);
