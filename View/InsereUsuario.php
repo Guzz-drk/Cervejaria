@@ -8,7 +8,7 @@
    <?php include "menu.php" ?>
 </head>
 <body>
-    <form action="Controller/controller.php" method="POST">
+    <form action="../Controller/controller.php" method="POST">
     <label for="">Nome</label>
     <input type="text" id="nome" name="nome">
     <label for="">Data de Nascimento</label>

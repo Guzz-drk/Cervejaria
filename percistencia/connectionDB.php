@@ -16,6 +16,8 @@ class connectionDB extends PDO {
                 "masterkey"
             );
             echo "Conexão ao banco de dados efetuada!";
+            header('Location:../index.php');
+
         } catch (Exception $e){
             echo "Ocorerram erros ao conectar!";
             echo $e;
