@@ -8,6 +8,6 @@
    <?php include "view/menu.php" ?>
 </head>
 <body>
-    
+  
 </body>
 </html>

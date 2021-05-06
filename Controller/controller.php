@@ -29,8 +29,6 @@ if ((!empty($_POST['nome'])) && (!empty($_POST['dataNascimento']))&&
 
         $userDao = new UsuarioDAO();
         $userDao->create($usuario);
-        echo "sucess";
-        var_dump($usuario);
     }
     else {
         echo "Ocorreram erros ao cadastrar um novo Usuário!";
