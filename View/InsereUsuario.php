@@ -16,27 +16,27 @@
         <form action="../Controller/controller.php" method="POST">
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome" name="nome">
+                <input type="text" class="form-control" id="nome" name="nome" required>
             </div>
             <div class="form-group">
                 <label for="dataNascimento">Data de Nascimento:</label>
-                <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" max="<?php echo date('Y-m-d', strtotime('-18 year')); ?>">
+                <input type="date" class="form-control" id="dataNascimento" required name="dataNascimento" max="<?php echo date('Y-m-d', strtotime('-18 year')); ?>">
             </div>
             <div class="form-group">
                 <label for="emailUsuario">E-mail:</label>
-                <input type="email" class="form-control" id="emailUsuario" name="emailUsuario">
+                <input type="email" class="form-control" id="emailUsuario" required name="emailUsuario">
             </div>
             <div class="form-group">
                 <label for="senhaUsuario">Senha:</label>
-                <input type="password" class="form-control" id="senhaUsuario" name="senhaUsuario">
+                <input type="password" class="form-control" id="senhaUsuario" required name="senhaUsuario">
             </div>
             <div class="form-group">
                 <label for="brassagenscont">Número de Brassagens:</label>
-                <input type="number" class="form-control" id="brassagenscont" name="brassagenscont">
+                <input type="number" class="form-control" id="brassagenscont" required name="brassagenscont">
             </div>
             <div class="form-group">
                 <label for="cursoscerv">Quantidade de Cursos Feitos:</label>
-                <input type="number" class="form-control" id="cursoscerv" name="cursoscerv">
+                <input type="number" class="form-control" id="cursoscerv" required name="cursoscerv">
             </div>
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
