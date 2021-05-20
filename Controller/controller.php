@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../Model/Usuario.php';
 include '../Include/UsuarioValidate.php';
 include '../DAO/UsuarioDAO.php';
@@ -32,7 +33,11 @@ function criar(){
 }
 
 function listar(){
-    echo "Metodo de Listagem";
+    $userDao = new UsuarioDAO();
+    $usuario = $userDao->search();
+
+    $_SESSION['users'] = serialize($usuario);
+    header("location:../View/Listarusuario.php");
 }
 
 function atualizar(){
