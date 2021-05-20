@@ -10,6 +10,17 @@
     <title>Document</title>
 </head>
 <body>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Brasagens</th>
+    </tr>
+  </thead>
+  <tbody>
+      
+
     <?php
     include 'menu.php';
     if (isset($_SESSION['users'])){
@@ -21,12 +32,19 @@
         foreach($users as $u){
             $id = $u['id'];
             $nome = $u['nome'];
-            $emailUsuario = $u['emailUsuario'];
-            echo"<tr><td><a href = '../Controller/controller.php?operation=deletar&id=$id'>Deletar</a></td>- $nome<br></tr> ";
+            $email = $u['email'];
+            $brassagens = $u['numbrassagens'];
+            echo "<tr>
+            <td>$nome</td>
+            <td>$email</td>
+            <td>$brassagens</td>
+          </tr>";
         }
         
         unset($_SESSION['users']);
     }
     ?>
+    </tbody>
+    </table>
 </body>
 </html>
