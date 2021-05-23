@@ -16,6 +16,7 @@
       <th scope="col">Nome</th>
       <th scope="col">E-mail</th>
       <th scope="col">Brasagens</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -38,6 +39,7 @@
             <td>$nome</td>
             <td>$email</td>
             <td>$brassagens</td>
+            <td><a href='../Controller/controller.php?operation=deletar&id=$id'>Deletar</a></td>
           </tr>";
         }
         

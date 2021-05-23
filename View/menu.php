@@ -30,8 +30,8 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="/View/InsereUsuario.php">Adicionar Usuário <img src="../resources/icons/add.png" width="20" height="20"></a>
-                <a class="dropdown-item" href="#">Manutenção Usuário <img src="../resources/icons/icons8-chave-de-fenda-100.png" width="20" height="20"></a>
-                <a class="dropdown-item" href="../Controller/controller.php?operation=consultar">Consultar Usuários <img src="../resources/icons/loupe.png" width="20" height="20" alt=""></a>
+                <a class="dropdown-item" href="../Controller/controller.php?operation=consultar">Manutenção Usuário <img src="../resources/icons/icons8-chave-de-fenda-100.png" width="20" height="20"></a>
+                <a class="dropdown-item" href="#">Consultar Usuários <img src="../resources/icons/loupe.png" width="20" height="20" alt=""></a>
               </div>
             </li>
           </ul>

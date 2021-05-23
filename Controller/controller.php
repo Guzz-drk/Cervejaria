@@ -38,6 +38,7 @@ function listar(){
 
     $_SESSION['users'] = serialize($usuario);
     header("location:../View/Listarusuario.php");
+   
 }
 
 function atualizar(){
@@ -45,7 +46,15 @@ function atualizar(){
 }
 
 function deletar(){
-    echo "Metodo de deletar";
+    $id = $_GET['id'];
+    if(isset($id)){
+        $userDao = new UsuarioDAO();
+        $userDao->delete($id);
+        header("location:../Controller/controller.php?operation=consultar");
+    }
+    else{
+        echo "Usuário informado não existe!";
+    }
 }
 
     $operacao = $_GET['operation'];

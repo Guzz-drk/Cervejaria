@@ -40,6 +40,19 @@ class UsuarioDAO{
             echo $e;
         }
     }
+
+    public function delete($id){
+        try{
+            $statement = $this->connection->prepare("DELETE FROM usuarios WHERE id = ?");
+            $statement->bindValue(1, $id);
+            $statement->execute();
+
+            $this->connection = null;
+        } catch (PDOException $e){
+            echo "Erro ao deletar usuário!";
+            echo $e;
+        }
+    }
 }
 
 
