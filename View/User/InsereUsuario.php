@@ -13,7 +13,7 @@
 <body>
     <div class="container">
     <h2>Adicionar Usuário</h2>
-        <form action="../Controller/controller.php?operation=cadastrar" method="POST">
+        <form action="../../Controller/controller.php?operation=cadastrar" method="POST">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" required>

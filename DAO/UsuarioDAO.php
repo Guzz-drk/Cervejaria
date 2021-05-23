@@ -53,6 +53,23 @@ class UsuarioDAO{
             echo $e;
         }
     }
+
+    public function find($email, $senha){
+        try{
+            $statement = $this->connection->prepare("SELECT * FROM usuarios WHERE email = ? and senha = ?");
+            $statement->bindValue(1, $email);
+            $statement->bindValue(2, $senha);
+            $statement->execute();
+            $user = $statement->fetchAll();
+
+            $this->connection = null;
+
+            return $user;
+        } catch (PDOException $e){
+            echo"Erro ao procurar Usuários!";
+            echo $e;
+        }
+    }
 }
 
 

@@ -15,23 +15,23 @@
 </head>
 <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><b> ProjBeer </b>  <img src="../resources/icons/icons8-cerveja-80.png" width="30" height="30" ></a>
+        <a class="navbar-brand" href="#"><b> ProjBeer </b>  <img src="../../resources/icons/icons8-cerveja-80.png" width="30" height="30" ></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="../index.php">Home <img src="../resources/icons/icons8-casa-96.png" width="20" height="20"></a>
+              <a class="nav-link" href="../../index.php">Home <img src="../../resources/icons/icons8-casa-96.png" width="20" height="20"></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Usuários <img src="../resources/icons/icons8-usuário-masculino-96.png" width="20" height="20">
+                Usuários <img src="../../resources/icons/icons8-usuário-masculino-96.png" width="20" height="20">
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/View/InsereUsuario.php">Adicionar Usuário <img src="../resources/icons/add.png" width="20" height="20"></a>
-                <a class="dropdown-item" href="../Controller/controller.php?operation=consultar">Manutenção Usuário <img src="../resources/icons/icons8-chave-de-fenda-100.png" width="20" height="20"></a>
-                <a class="dropdown-item" href="#">Consultar Usuários <img src="../resources/icons/loupe.png" width="20" height="20" alt=""></a>
+                <a class="dropdown-item" href="/View/User/InsereUsuario.php">Adicionar Usuário <img src="../../resources/icons/add.png" width="20" height="20"></a>
+                <a class="dropdown-item" href="../../Controller/controller.php?operation=consultar">Manutenção Usuário <img src="../../resources/icons/icons8-chave-de-fenda-100.png" width="20" height="20"></a>
+                <a class="dropdown-item" href="#">Consultar Usuários <img src="../../resources/icons/loupe.png" width="20" height="20" alt=""></a>
               </div>
             </li>
           </ul>

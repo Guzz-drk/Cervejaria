@@ -25,7 +25,7 @@
     <?php
     include 'menu.php';
     if (isset($_SESSION['users'])){
-        include_once '../Model/Usuario.php';
+        include_once '../../Model/Usuario.php';
       
         $users = array();
         $users = unserialize($_SESSION['users']);
@@ -39,7 +39,7 @@
             <td>$nome</td>
             <td>$email</td>
             <td>$brassagens</td>
-            <td><a href='../Controller/controller.php?operation=deletar&id=$id'>Deletar</a></td>
+            <td><a href='../../Controller/controller.php?operation=deletar&id=$id'>Deletar</a></td>
           </tr>";
         }
         

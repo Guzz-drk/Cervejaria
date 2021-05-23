@@ -37,7 +37,7 @@ function listar(){
     $usuario = $userDao->search();
 
     $_SESSION['users'] = serialize($usuario);
-    header("location:../View/Listarusuario.php");
+    header("location:../View/User/Listarusuario.php");
    
 }
 
@@ -50,7 +50,7 @@ function deletar(){
     if(isset($id)){
         $userDao = new UsuarioDAO();
         $userDao->delete($id);
-        header("location:../Controller/controller.php?operation=consultar");
+        header("location:../../Controller/controller.php?operation=consultar");
     }
     else{
         echo "Usuário informado não existe!";
