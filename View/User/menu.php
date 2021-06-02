@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="../../index.php">Home <img src="../../resources/icons/icons8-casa-96.png" width="20" height="20"></a>
+              <a class="nav-link" href="menu.php">Home <img src="../../resources/icons/icons8-casa-96.png" width="20" height="20"></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,6 +33,9 @@
                 <a class="dropdown-item" href="../../Controller/controller.php?operation=consultar">Manutenção Usuário <img src="../../resources/icons/icons8-chave-de-fenda-100.png" width="20" height="20"></a>
                 <a class="dropdown-item" href="#">Consultar Usuários <img src="../../resources/icons/loupe.png" width="20" height="20" alt=""></a>
               </div>
+              <li class="nav-item active">
+              <a class="nav-link" href="../../Controller/AutoController.php?operation=logout">Logout <img src="../../resources/icons/icons8-casa-96.png" width="20" height="20"></a>
+            </li>
             </li>
           </ul>
         </div>

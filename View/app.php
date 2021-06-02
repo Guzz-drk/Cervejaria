@@ -13,8 +13,8 @@ include "User/menu.php";
 <body>
     <?php
         if (isset($_SESSION['usuario'])){
-            echo "<h1>Usuário Online</h1><p>";
-            echo '<br><a href="../Controller/AutoController.php?operation=logout">Logout</a><br>';
+            header("location:User/menu.php");
+            
         }
         else{
             echo "<h1>Usuário Offline</h1><p>";
