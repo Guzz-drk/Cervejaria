@@ -86,18 +86,3 @@ input[type="text"] {
     background: #80ff80;
     transition: 0.2s;
 }
-#voltar {
-    border: none;
-    outline: none;
-    height: 35px;
-    color: #000;
-    background: #fff;
-    border-radius: 20px;
-    transition: 0.2s;
-}
-#voltar:hover {
-
-    cursor: pointer;
-    background: #80ff80;
-    transition: 0.2s;
-}

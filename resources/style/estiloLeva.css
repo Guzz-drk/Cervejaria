@@ -1,11 +1,11 @@
 body{
     margin: 0;
     padding: 0;
-    background-image:url(); 
+    background-image:url(../icons/insumo.jpeg); 
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    font-family: "Comfortaa", sans-serif;
+    font-family: sans-serif;
 }
 
 .cadastro{
@@ -13,9 +13,9 @@ body{
     width: 500px;
     height: 420;
     border: 2px solid #000;
-    border-radius: 80px 0px 80px 0px;
+    border-radius: 0px 80px 80px 0px;
     color: #fff;
-    background-color: rgba(0, 0, 5, 0.9);
+    background-color: rgba(0, 0, 5, 0.8);
     top: 50%;
     left: 50%;
     position: absolute;
@@ -37,7 +37,7 @@ h2{
 }
 
 h2:hover{
-    color: #6495ed;
+    color: #cd5c5c;
     transition: 0.2s;
 }
 
@@ -54,7 +54,7 @@ h2:hover{
     margin-bottom: 21px;
 }
 
-.cadastro input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="text"]{
+.cadastro input[type="text"], input[type="date"], input[type="text"]{
     
     border: none;
     border-bottom: 1px solid white;
@@ -72,12 +72,14 @@ h2:hover{
     color: #000;
     background: #fff;
     border-radius: 20px;
-    transition: 0.2s;   
+    transition: 0.2s;
+    margin-left: 165px; 
+    width: 100px;  
 }
 
 .cadastro button[type="submit"]:hover{
 
     cursor: pointer;
-    background: #6495ed;
+    background: #cd5c5c;
     transition: 0.2s;
 }

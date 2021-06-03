@@ -13,7 +13,7 @@ include "User/menu.php";
 <body>
     <?php
         if (isset($_SESSION['usuario'])){
-            header("location:User/menu.php");
+            header("location:View/User/menu.php");
             
         }
         else{

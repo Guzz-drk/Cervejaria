@@ -1,32 +1,30 @@
-
-body {
+body{
     margin: 0;
     padding: 0;
-    background-image: url(../icons/insumo.jpeg);
+    background-image:url(../icons/insumo.jpeg); 
     background-attachment: fixed;
     background-size: cover;
-    background-position:center;
+    background-position: center;
     font-family: sans-serif;
 }
 
-.cadastro {
+.cadastro{
 
-    width: 480px;
+    width: 500px;
     height: 420;
     border: 2px solid #000;
     border-radius: 0px 80px 80px 0px;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 5, 0.8);
     top: 50%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 68px 28px;
-    margin-top: 3%;
 }
 
-h2 {
+h2{
 
     margin: 0;
     padding-top: 0;
@@ -38,31 +36,26 @@ h2 {
     font-size: 25px;
 }
 
-h2:hover {
+h2:hover{
     color: #cd5c5c;
     transition: 0.2s;
 }
 
-.cadastro p {
+.cadastro p{
 
     margin: 0;
     padding: 0;
     font-weight: bold;
 }
 
-.cadastro input {
-
+.cadastro input{
+    
     width: 100%;
     margin-bottom: 21px;
 }
 
-.cadastro input[type="text"], 
-input[type="password"], 
-input[type="date"],
-input[type="email"],
-input[type="number"],
-input[type="text"] {
-
+.cadastro input[type="text"], input[type="date"], input[type="text"]{
+    
     border: none;
     border-bottom: 1px solid white;
     background: transparent;
@@ -72,7 +65,7 @@ input[type="text"] {
     font-size: 16px;
 }
 
-.cadastro button[type="submit"] {
+.cadastro button[type="submit"]{
     border: none;
     outline: none;
     height: 35px;
@@ -80,11 +73,11 @@ input[type="text"] {
     background: #fff;
     border-radius: 20px;
     transition: 0.2s;
-    margin-left: 165px;
-    width: 100px;
+    margin-left: 165px; 
+    width: 100px;  
 }
 
-.cadastro button[type="submit"]:hover {
+.cadastro button[type="submit"]:hover{
 
     cursor: pointer;
     background: #cd5c5c;

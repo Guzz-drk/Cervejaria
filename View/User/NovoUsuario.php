@@ -48,7 +48,7 @@ session_start();
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Cadastrar</button>
-            <button name="voltar" id="voltar" class="btn btn-primary"><a href="../../index.php">Voltar</a></button>
+            <button type="submit" class="btn btn-primary"><a href="../../index.php">Voltar</a></button>
         </form>
     </div>
 </body>
