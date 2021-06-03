@@ -10,9 +10,6 @@ function criar(){
     if(!UsuarioValidate::validaEmail($_POST['emailUsuario'])){
         $erros[] = 'E-mail Inválido!';
     }
-    if(!UsuarioValidate::validaIdade($_POST['dataNascimento'])){
-        $erros[] = 'Idade abaixo do permitido!';
-    }
 
     if (count($erros) == 0){
         $usuario = new Usuario();

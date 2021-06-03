@@ -10,95 +10,12 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url(../../resources/style/beer.jpg);
-            background-attachment: fixed;
-            background-size: cover;
-            background-position:center;
-            font-family: "Comfortaa", sans-serif;
-        }
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../resources/style/estiloCadastro.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-        .cadastro {
-
-            width: 480px;
-            height: 420;
-            border: 2px solid #000;
-            border-radius: 80px 0px 80px 0px;
-            color: #fff;
-            background-image: linear-gradient(to right,#7e8f71,#557c64,#24695e);
-            top: 50%;
-            left: 50%;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            box-sizing: border-box;
-            padding: 68px 28px;
-        }
-
-        h2 {
-
-            margin: 0;
-            padding-top: 0;
-            padding-left: 0;
-            padding-bottom: 20px;
-            letter-spacing: 10px;
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 25px;
-        }
-
-        h2:hover {
-            color: #80ff80;
-            transition: 0.2s;
-        }
-
-        .cadastro p {
-
-            margin: 0;
-            padding: 0;
-            font-weight: bold;
-        }
-
-        .cadastro input {
-
-            width: 100%;
-            margin-bottom: 21px;
-        }
-
-        .cadastro input[type="password"],
-        input[type="date"],
-        input[type="email"],
-        input[type="number"],
-        input[type="text"] {
-
-            border: none;
-            border-bottom: 1px solid white;
-            background: transparent;
-            outline: none;
-            height: 40px;
-            color: white;
-            font-size: 16px;
-        }
-
-        .cadastro button[type="submit"] {
-            border: none;
-            outline: none;
-            height: 35px;
-            color: #000;
-            background: #fff;
-            border-radius: 20px;
-            transition: 0.2s;
-        }
-
-        .cadastro button[type="submit"]:hover {
-
-            cursor: pointer;
-            background: #80ff80;
-            transition: 0.2s;
-        }
-    </style>
 </head>
 
 <body>
@@ -131,6 +48,7 @@ session_start();
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button name="voltar" id="voltar" class="btn btn-primary"><a href="../../index.php">Voltar</a></button>
         </form>
     </div>
 </body>

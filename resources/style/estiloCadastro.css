@@ -1,21 +1,22 @@
-body{
+
+body {
     margin: 0;
     padding: 0;
-    background-image:url(); 
+    background-image: url(../../resources/style/beer.jpg);
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
+    background-position:center;
     font-family: "Comfortaa", sans-serif;
 }
 
-.cadastro{
+.cadastro {
 
-    width: 500px;
+    width: 480px;
     height: 420;
     border: 2px solid #000;
     border-radius: 80px 0px 80px 0px;
     color: #fff;
-    background-color: rgba(0, 0, 5, 0.9);
+    background-image: linear-gradient(to right,#7e8f71,#557c64,#24695e);
     top: 50%;
     left: 50%;
     position: absolute;
@@ -24,7 +25,7 @@ body{
     padding: 68px 28px;
 }
 
-h2{
+h2 {
 
     margin: 0;
     padding-top: 0;
@@ -36,26 +37,30 @@ h2{
     font-size: 25px;
 }
 
-h2:hover{
-    color: #6495ed;
+h2:hover {
+    color: #80ff80;
     transition: 0.2s;
 }
 
-.cadastro p{
+.cadastro p {
 
     margin: 0;
     padding: 0;
     font-weight: bold;
 }
 
-.cadastro input{
-    
+.cadastro input {
+
     width: 100%;
     margin-bottom: 21px;
 }
 
-.cadastro input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="text"]{
-    
+.cadastro input[type="password"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="text"] {
+
     border: none;
     border-bottom: 1px solid white;
     background: transparent;
@@ -65,19 +70,34 @@ h2:hover{
     font-size: 16px;
 }
 
-.cadastro button[type="submit"]{
+.cadastro button[type="submit"] {
     border: none;
     outline: none;
     height: 35px;
     color: #000;
     background: #fff;
     border-radius: 20px;
-    transition: 0.2s;   
+    transition: 0.2s;
 }
 
-.cadastro button[type="submit"]:hover{
+.cadastro button[type="submit"]:hover {
 
     cursor: pointer;
-    background: #6495ed;
+    background: #80ff80;
+    transition: 0.2s;
+}
+#voltar {
+    border: none;
+    outline: none;
+    height: 35px;
+    color: #000;
+    background: #fff;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+#voltar:hover {
+
+    cursor: pointer;
+    background: #80ff80;
     transition: 0.2s;
 }
