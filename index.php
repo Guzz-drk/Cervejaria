@@ -17,7 +17,7 @@ include "User/menu.php";
 </head>
 <body>
     <div class="login">
-        <img src="resources/style/user.png" class="usuario" width="100" height="100" alt="">
+        <img src="resources/icons/user.png" class="usuario" width="100" height="100" alt="">
         <h1>Login</h1>
         <form action="../../Controller/AutoController.php?operation=login" method="POST">
             <div class="form-group">

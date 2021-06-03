@@ -11,11 +11,11 @@ session_start(); ?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../resources/style/estiloUsuario.css">
 </head>
 
 <body>
     <div class="cadastro">
-        <div class="container">
             <h2>Novo Usuário</h2>
             <form action="../../Controller/controller.php?operation=cadastrar" method="POST">
                 <div class="form-group">
@@ -39,7 +39,7 @@ session_start(); ?>
                     <input type="number" class="form-control" id="brassagenscont" required name="brassagenscont">
                 </div>
                 <div class="form-group">
-                    <p>Qunatidade de Cursos feitos</p>
+                    <p>Quantidade de Cursos feitos</p>
                     <input type="number" class="form-control" id="cursoscerv" required name="cursoscerv">
                 </div>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>

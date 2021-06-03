@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(../../resources/style/beer.jpg);
+    background-image: url(../icons/beer.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position:center;
@@ -14,7 +14,7 @@ body {
     width: 480px;
     height: 420;
     border: 2px solid #000;
-    border-radius: 80px 0px 80px 0px;
+    border-radius: 0px 80px 0px 80px;
     color: #fff;
     background-image: linear-gradient(to right,#7e8f71,#557c64,#24695e);
     top: 50%;

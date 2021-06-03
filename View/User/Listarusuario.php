@@ -7,10 +7,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../resources/style/estiloTabela.css">
     <title>Document</title>
 </head>
 <body>
-<table class="table table-hover">
+<table class="table table-hover" id="tabela">
   <thead>
     <tr>
       <th scope="col">Nome</th>
@@ -39,7 +40,7 @@
             <td>$nome</td>
             <td>$email</td>
             <td>$brassagens</td>
-            <td><a href='../../Controller/controller.php?operation=deletar&id=$id'>Deletar</a></td>
+            <td><a href='../../Controller/controller.php?operation=deletar&id=$id'><img src='../../resources/icons/delete.png' width='20' height='20'></a></td>
           </tr>";
         }
         

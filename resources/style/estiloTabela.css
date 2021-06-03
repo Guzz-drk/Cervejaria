@@ -1,0 +1,18 @@
+#tabela{
+    border: 1px solid black;
+    background-color: #e29f87;
+}
+
+table thead tr th{
+    text-decoration-line: underline;
+}
+
+table tbody tr td{
+    text-decoration-line: inherit;
+    
+}
+
+table tbody tr:hover{
+    text-decoration-line: underline;
+    background-color: #ecc0b0;
+}
