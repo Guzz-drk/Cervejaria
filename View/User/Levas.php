@@ -18,7 +18,7 @@ include "menu.php";
 <body>
     <div class="cadastro">
         <h2>Cadastrar Leva</h2>
-        <form action="" method="POST">
+        <form action="../../Controller/levaController.php?operation=cadastrar" method="POST">
             <div class="form-group">
                 <p>Data da Leva</p>
                 <input type="date" class="form-control" id="dataLeva" name="dataLeva" required>
@@ -29,15 +29,15 @@ include "menu.php";
             </div>
             <div class="form-group">
                 <p>Fervura Inicial</p>
-                <input type="text" class="form-control" id="fervuraInicioLeva" name="fervuraInicioLeva" required>
+                <input type="text" class="form-control" id="fervuraInicioLeva" name="fervuraInicio" required>
             </div>
             <div class="form-group">
                 <p>Fervura Final</p>
-                <input type="text" class="form-control" id="fervuraFimLeva" name="fervuraFimLeva" required>
+                <input type="text" class="form-control" id="fervuraFimLeva" name="fervuraFim" required>
             </div>
             <div class="form-group">
                 <p>Fermento</p>
-                <input type="text" class="form-control" id="fermentoLeva" name="fermentoLeva" required>
+                <input type="text" class="form-control" id="fermentoLeva" name="fermento" required>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>

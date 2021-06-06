@@ -17,13 +17,33 @@ include "menu.php";
 <body>
   <table class="table table-hover" id="tabela">
     <thead>
-      <tr>
+      <tr><th scope="col">ID #</th>
         <th scope="col">Nome do Malte</th>
         <th scope="col">Tipo do Malte</th>
+        <th scope="col"></th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
+    <?php
+   
+   include_once '../../Model/Malte.php';
+ 
+   $malte = array();
+   $malte = unserialize($_SESSION['malte']);
+
+   foreach($leva as $u){
+       $id = $u['id'];
+       $tipo = $u['nome'];
+       $nome = $u['tipo_malte'];
+       echo "<tr>
+       <td>$id</td>
+       <td>$nome</td>
+       <td>$tipo</td>
+       <td><a href='../../Controller/malteController.php?operation=deletar&id=$id'><img src='../../resources/icons/delete.png' width='20' height='20'></a></td>
+     </tr>";
+   }
+   ?>
     </tbody>
   </table>
 </body>

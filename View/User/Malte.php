@@ -18,7 +18,7 @@ include "menu.php";
 <body>
     <div class="cadastro">
         <h2>Cadastrar Malte</h2>
-        <form action="" method="POST">
+        <form action="../../Controller/MalteController.php?operation=cadastrar" method="POST">
             <div class="form-group">
                 <p>Nome</p>
                 <input type="text" class="form-control" id="nomeMalte" name="nomeMalte" required>
