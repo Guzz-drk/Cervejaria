@@ -1,5 +1,4 @@
 <?php
-include "User/menu.php";
     session_start();
 ?>
 <!DOCTYPE html>
@@ -13,11 +12,11 @@ include "User/menu.php";
 <body>
     <?php
         if (isset($_SESSION['usuario'])){
-            header("location:View/User/menu.php");
+            header("location:User/menu.php");
             
         }
         else{
-            echo "<h1>Usuário Offline</h1><p>";
+            echo "<h1>Usuário Offline</h1>";
         }
     ?>
 </body>

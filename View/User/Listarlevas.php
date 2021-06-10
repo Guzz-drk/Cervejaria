@@ -15,6 +15,11 @@ include "menu.php";
 </head>
 
 <body>
+<?php
+$user = unserialize($_SESSION['usuario']);
+if (!$user)
+  header("location:../../index.php");
+?>
   <table class="table table-hover" id="tabela">
     <thead>
       <tr>

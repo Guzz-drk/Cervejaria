@@ -16,6 +16,11 @@ include "menu.php";
     <link rel="stylesheet" href="../../resources/style/estiloLeva.css">
 </head>
 <body>
+<?php
+$user = unserialize($_SESSION['usuario']);
+if (!$user)
+  header("location:../../index.php");
+?>
     <div class="cadastro">
         <h2>Cadastrar Leva</h2>
         <form action="../../Controller/levaController.php?operation=cadastrar" method="POST">

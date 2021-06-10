@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +21,11 @@
 </head>
 
 <body>
+<?php
+$user = unserialize($_SESSION['usuario']);
+  if(!$user)
+    header("location:../../index.php");
+?>
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#"><img src="../../resources/icons/icons8-cerveja-80.png" width="30" height="30"></a>
