@@ -37,10 +37,10 @@ if (!$user)
    $malte = array();
    $malte = unserialize($_SESSION['malte']);
 
-   foreach($leva as $u){
+   foreach($malte as $u){
        $id = $u['id'];
-       $tipo = $u['nome'];
-       $nome = $u['tipo_malte'];
+       $nome = $u['nome'];
+       $tipo = $u['tipo_malte'];
        echo "<tr>
        <td>$id</td>
        <td>$nome</td>
