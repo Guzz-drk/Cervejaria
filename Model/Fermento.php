@@ -1,5 +1,5 @@
 <?php
-class Leva{
+class Fermento{
 
     var $nome;
     var $tipo;

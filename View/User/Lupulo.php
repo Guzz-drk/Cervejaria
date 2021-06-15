@@ -25,9 +25,9 @@ include "menu.php";
     ?>
     <div class="cadastro">
         <h2>Cadastrar Lúpulo</h2>
-        <form action="../../Controller/levaController.php?operation=cadastrar" method="POST">
+        <form action="../../Controller/lupuloController.php?operation=cadastrar" method="POST">
             <div class="form-group">
-                <p>Nome:</p>
+                <p>Nome</p>
                 <input type="text" class="form-control" id="nomeLupulo" name="nomeLupulo" required>
             </div>
             <div class="form-group">

@@ -25,7 +25,7 @@ include "menu.php";
     ?>
     <div class="cadastro">
         <h2>Cadastrar Fermento</h2>
-        <form action="../../Controller/levaController.php?operation=cadastrar" method="POST">
+        <form action="../../Controller/fermentoController.php?operation=cadastrar" method="POST">
             <div class="form-group">
                 <p>Nome:</p>
                 <input type="text" class="form-control" id="nomeFermento" name="nomeFermento" required>
