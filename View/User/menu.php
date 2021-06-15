@@ -62,7 +62,7 @@ session_start();
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="/View/User/Lupulo.php">Cadastrar Lúpulos <img src="../../resources/icons/add.png" width="20" height="20"></a>
-              <a class="dropdown-item" href="../../Controller/MalteController.php?operation=consultar">Listar Lúpulos <img src="../../resources/icons/lista.png" width="20" height="20"></a>
+              <a class="dropdown-item" href="../../Controller/lupuloController.php?operation=consultar">Listar Lúpulos <img src="../../resources/icons/lista.png" width="20" height="20"></a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -71,7 +71,7 @@ session_start();
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="/View/User/Fermento.php">Cadastrar Fermentos <img src="../../resources/icons/add.png" width="20" height="20"></a>
-              <a class="dropdown-item" href="../../Controller/MalteController.php?operation=consultar">Listar Fermentos <img src="../../resources/icons/lista.png" width="20" height="20"></a>
+              <a class="dropdown-item" href="../../Controller/fermentoController.php?operation=consultar">Listar Fermentos <img src="../../resources/icons/lista.png" width="20" height="20"></a>
             </div>
           </li>
           <li class="nav-item dropdown">

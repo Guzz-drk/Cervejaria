@@ -29,6 +29,27 @@ include "menu.php";
         <th scope="col">Origem do Lúpulo</th>
         <th scope="col"></th>
       </tr>
+      <?php
+
+      include_once '../../Model/Lupulo.php';
+
+      $lupulo = array();
+      $lupulo = unserialize($_SESSION['lupulos']);
+
+      foreach ($lupulo as $u) {
+        $id = $u['id'];
+        $nome = $u['nome'];
+        $tipo= $u['tipo'];
+        $origem =$u['origem'];
+        echo "<tr>
+       <td>$id</td>
+       <td>$nome</td>
+       <td>$tipo</td>
+       <td>$origem</td>
+       <td><a href='../../Controller/lupuloController.php?operation=deletar&id=$id'><img src='../../resources/icons/delete.png' width='20' height='20'></a></td>
+     </tr>";
+      }
+      ?>
     </thead>
     <tbody>
     </tbody>
