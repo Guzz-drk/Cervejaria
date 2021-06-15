@@ -1,12 +1,9 @@
 <?php
 class Leva{
 
-    var $data;
-    var $tipoleva;
-    var $fervuraini;
-    var $fervurafinal;
-    var $fermento;
-    var $lupulo;
+    var $nome;
+    var $tipo;
+    var $marca;
     public function __construct(){
         
     }
