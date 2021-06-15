@@ -1,4 +1,5 @@
 <?php
+include "User/menu.php";
     session_start();
 ?>
 <!DOCTYPE html>

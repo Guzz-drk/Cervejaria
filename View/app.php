@@ -11,13 +11,14 @@
 </head>
 <body>
     <?php
-        if (isset($_SESSION['usuario'])){
-            header("location:User/menu.php");
-            
+        if (!isset($_SESSION['usuario'])){
+            header("location:../index.php");
+                    
         }
         else{
-            echo "<h1>Usuário Offline</h1>";
+            header("location:User/menu.php");  
         }
+     var_dump($_SESSION['usuario'])
     ?>
 </body>
 </html>

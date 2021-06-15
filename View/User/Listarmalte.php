@@ -15,11 +15,6 @@ include "menu.php";
 </head>
 
 <body>
-<?php
-$user = unserialize($_SESSION['usuario']);
-if (!$user)
-  header("location:../../index.php");
-?>
   <table class="table table-hover" id="tabela">
     <thead>
       <tr><th scope="col">ID #</th>
@@ -40,7 +35,11 @@ if (!$user)
    foreach($malte as $u){
        $id = $u['id'];
        $nome = $u['nome'];
+<<<<<<< HEAD
        $tipo = $u['tipo_malte'];
+=======
+        $tipo = $u['tipo_malte'];
+>>>>>>> 9e5e320b2ebbbe428728fdea795818b44843622a
        echo "<tr>
        <td>$id</td>
        <td>$nome</td>
