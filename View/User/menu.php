@@ -48,25 +48,30 @@ session_start();
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Insumos <img src="../../resources/icons/icons8-usuário-masculino-96.png" width="20" height="20">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Insumos
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Maltes <img src="../../resources/icons/icons8-usuário-masculino-96.png" width="20" height="20">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Maltes
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/View/User/Malte.php">Cadastrar Maltes <img src="../../resources/icons/add.png" width="20" height="20"></a>
                 <a class="dropdown-item" href="../../Controller/MalteController.php?operation=consultar">Listar Maltes <img src="../../resources/icons/cerveja.png" width="20" height="20"></a>
               </div>
-            </div>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Lúpulo <img src="../../resources/icons/icons8-usuário-masculino-96.png" width="20" height="20">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Lúpulo
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/View/User/Malte.php">Cadastrar Maltes <img src="../../resources/icons/add.png" width="20" height="20"></a>
-                <a class="dropdown-item" href="../../Controller/MalteController.php?operation=consultar">Listar Maltes <img src="../../resources/icons/cerveja.png" width="20" height="20"></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/View/User/Lupulo.php">Cadastrar Lúpulo <img src="../../resources/icons/add.png" width="20" height="20"></a>
+                <a class="dropdown-item" href="../../Controller/MalteController.php?operation=consultar">Listar Lúpulo <img src="../../resources/icons/hop.png" width="20" height="20"></a>
+              </div>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Fermento
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/View/User/Fermento.php">Cadastrar Fermento <img src="../../resources/icons/add.png" width="20" height="20"></a>
+                <a class="dropdown-item" href="../../Controller/MalteController.php?operation=consultar">Listar Fermentos <img src="../../resources/icons/cerveja.png" width="20" height="20"></a>
               </div>
             </div>
           <li class="nav-item dropdown">
