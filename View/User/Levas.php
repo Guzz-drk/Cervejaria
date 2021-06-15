@@ -16,11 +16,6 @@ include "menu.php";
     <link rel="stylesheet" href="../../resources/style/estiloLeva.css">
 </head>
 <body>
-<?php
-$user = unserialize($_SESSION['usuario']);
-if (!$user)
-  header("location:../../index.php");
-?>
     <div class="cadastro">
         <h2>Cadastrar Leva</h2>
         <form action="../../Controller/levaController.php?operation=cadastrar" method="POST">
@@ -34,11 +29,11 @@ if (!$user)
             </div>
             <div class="form-group">
                 <p>Fervura Inicial</p>
-                <input type="text" class="form-control" id="fervuraInicioLeva" name="fervuraInicio" required>
+                <input type="datetime-local" class="form-control" id="fervuraInicioLeva" name="fervuraInicio" required>
             </div>
             <div class="form-group">
                 <p>Fervura Final</p>
-                <input type="text" class="form-control" id="fervuraFimLeva" name="fervuraFim" required>
+                <input type="datetime-local" class="form-control" id="fervuraFimLeva" name="fervuraFim" required>
             </div>
             <div class="form-group">
                 <p>Fermento</p>

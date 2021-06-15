@@ -16,11 +16,6 @@ include "menu.php";
     <link rel="stylesheet" href="../../resources/style/estiloMalte.css">
 </head>
 <body>
-<?php
-$user = unserialize($_SESSION['usuario']);
-if (!$user)
-  header("location:../../index.php");
-?>
     <div class="cadastro">
         <h2>Cadastrar Malte</h2>
         <form action="../../Controller/MalteController.php?operation=cadastrar" method="POST">

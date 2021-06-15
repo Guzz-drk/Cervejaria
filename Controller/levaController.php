@@ -18,7 +18,7 @@ function criar(){
        
         $levaDao= new LevaDAO();
         $levaDao->create($leva);
-        
+        header("location:../View/User/menu.php");
     }
     else {
         echo "Ocorreram erros ao cadastrar um novo Usuário!";
@@ -43,7 +43,7 @@ function deletar(){
     if(isset($id)){
         $levaDao = new LevaDAO();
         $levaDao->delete($id);
-        header("location:../../Controller/levaController.php?operation=consultar");
+       listar();
     }
     else{
         echo "Usuário informado não existe!";

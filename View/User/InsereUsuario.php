@@ -1,6 +1,5 @@
 <?php include "menu.php";
-session_start(); 
-?>
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,11 +15,6 @@ session_start();
 </head>
 
 <body>
-<?php
-  $user = unserialize($_SESSION['usuario']);
-  if (!$user)
-    header("location:../../index.php");
-?>
     <div class="cadastro">
             <h2>Novo Usuário</h2>
             <form action="../../Controller/controller.php?operation=cadastrar" method="POST">

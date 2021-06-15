@@ -15,19 +15,19 @@ function criar(){
         
         $levaDao= new malteDAO();
         $levaDao->create($malte);
+    header("location:../View/User/menu.php");
         
     }
     else {
-        echo "Ocorreram erros ao cadastrar um novo Usuário!";
+        echo "Ocorreram erros ao cadastrar um novo tipo de malte!";
     }
 }
 
 function listar(){
-    $malteDao = new malteDAO();
+   $malteDao = new malteDAO();
     $malte = $malteDao->search();
-
     $_SESSION['malte'] = serialize($malte);
-    header("../View/User/Listarmalte.php");
+    header("location:../View/User/Listarmalte.php");
    
 }
 
@@ -40,7 +40,7 @@ function deletar(){
     if(isset($id)){
         $malteDao = new malteDAO();
         $malteDao->delete($id);
-        header("location:../../Controller/levaController.php?operation=consultar");
+       listar();
     }
     else{
         echo "Usuário informado não existe!";
