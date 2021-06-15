@@ -45,7 +45,13 @@ include "menu.php";
             <div class="form-group">
                 <p>Fermento</p>
                 <input type="text" class="form-control" id="fermentoLeva" name="fermento" required>
+                <input type="number" step="0.1" class="form-control" id="fermentog" name="fermentog" required>
             </div>
+            <div class="form-group">
+                <p>Água</p>
+                <input type="number" step="0.1" class="form-control" id="aguaLeva" name="aguaLeva" required>
+            </div>
+            
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>

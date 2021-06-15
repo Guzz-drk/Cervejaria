@@ -37,7 +37,7 @@ h2{
 }
 
 h2:hover{
-    color: #cd5c5c;
+    color: #f5f5a4;
     transition: 0.2s;
 }
 
@@ -80,6 +80,6 @@ h2:hover{
 .cadastro button[type="submit"]:hover{
 
     cursor: pointer;
-    background: #cd5c5c;
+    background: #f5f5a4;
     transition: 0.2s;
 }
