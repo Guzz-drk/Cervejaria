@@ -46,6 +46,29 @@ session_start();
               <a class="dropdown-item" href="/View/User/InsereUsuario.php">Adicionar Usuário <img src="../../resources/icons/add.png" width="20" height="20"></a>
               <a class="dropdown-item" href="../../Controller/controller.php?operation=consultar">Consultar Usuários <img src="../../resources/icons/loupe.png" width="20" height="20" alt=""></a>
             </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Insumos <img src="../../resources/icons/icons8-usuário-masculino-96.png" width="20" height="20">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Maltes <img src="../../resources/icons/icons8-usuário-masculino-96.png" width="20" height="20">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/View/User/Malte.php">Cadastrar Maltes <img src="../../resources/icons/add.png" width="20" height="20"></a>
+                <a class="dropdown-item" href="../../Controller/MalteController.php?operation=consultar">Listar Maltes <img src="../../resources/icons/cerveja.png" width="20" height="20"></a>
+              </div>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Lúpulo <img src="../../resources/icons/icons8-usuário-masculino-96.png" width="20" height="20">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/View/User/Malte.php">Cadastrar Maltes <img src="../../resources/icons/add.png" width="20" height="20"></a>
+                <a class="dropdown-item" href="../../Controller/MalteController.php?operation=consultar">Listar Maltes <img src="../../resources/icons/cerveja.png" width="20" height="20"></a>
+              </div>
+            </div>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Levas<img src="../../resources/icons/pote-magico.png" width="20" height="20">
@@ -53,14 +76,6 @@ session_start();
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="/View/User/Levas.php">Cadastrar Levas <img src="../../resources/icons/add.png" width="20" height="20"></a>
               <a class="dropdown-item" href="../../Controller/levaController.php?operation=consultar">Listar Levas <img src="../../resources/icons/lista.png" width="20" height="20"></a>
-            </div>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Maltes <img src="../../resources/icons/cevada.png" width="20" height="20">
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/View/User/Malte.php">Cadastrar Maltes <img src="../../resources/icons/add.png" width="20" height="20"></a>
-              <a class="dropdown-item" href="../../Controller/MalteController.php?operation=consultar">Listar Maltes <img src="../../resources/icons/cerveja.png" width="20" height="20"></a>
             </div>
           <li class="nav-item active">
             <a class="nav-link" href="../../Controller/AutoController.php?operation=logout">Logout <img src="../../resources/icons/logout.png" width="20" height="20"></a>
