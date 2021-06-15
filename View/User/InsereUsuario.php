@@ -15,36 +15,41 @@ session_start(); ?>
 </head>
 
 <body>
+    <?php
+    $user = unserialize($_SESSION['usuario']);
+    if (!$user)
+        header("location../../index.php");
+    ?>
     <div class="cadastro">
-            <h2>Novo Usuário</h2>
-            <form action="../../Controller/controller.php?operation=cadastrar" method="POST">
-                <div class="form-group">
-                    <p>Nome</p>
-                    <input type="text" class="form-control" id="nome" name="nome" required>
-                </div>
-                <div class="form-group">
-                    <p>Data de Nascimento</p>
-                    <input type="date" class="form-control" id="dataNascimento" required name="dataNascimento" max="<?php echo date('Y-m-d', strtotime('-18 year')); ?>">
-                </div>
-                <div class="form-group">
-                    <p>E-mail</p>
-                    <input type="email" class="form-control" id="emailUsuario" required name="emailUsuario">
-                </div>
-                <div class="form-group">
-                    <p>Senha</p>
-                    <input type="password" class="form-control" id="senhaUsuario" required name="senhaUsuario">
-                </div>
-                <div class="form-group">
-                    <p>Número de Brassagens</p>
-                    <input type="number" class="form-control" id="brassagenscont" required name="brassagenscont">
-                </div>
-                <div class="form-group">
-                    <p>Quantidade de Cursos feitos</p>
-                    <input type="number" class="form-control" id="cursoscerv" required name="cursoscerv">
-                </div>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </form>
-        </div>
+        <h2>Novo Usuário</h2>
+        <form action="../../Controller/controller.php?operation=cadastrar" method="POST">
+            <div class="form-group">
+                <p>Nome</p>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <p>Data de Nascimento</p>
+                <input type="date" class="form-control" id="dataNascimento" required name="dataNascimento" max="<?php echo date('Y-m-d', strtotime('-18 year')); ?>">
+            </div>
+            <div class="form-group">
+                <p>E-mail</p>
+                <input type="email" class="form-control" id="emailUsuario" required name="emailUsuario">
+            </div>
+            <div class="form-group">
+                <p>Senha</p>
+                <input type="password" class="form-control" id="senhaUsuario" required name="senhaUsuario">
+            </div>
+            <div class="form-group">
+                <p>Número de Brassagens</p>
+                <input type="number" class="form-control" id="brassagenscont" required name="brassagenscont">
+            </div>
+            <div class="form-group">
+                <p>Quantidade de Cursos feitos</p>
+                <input type="number" class="form-control" id="cursoscerv" required name="cursoscerv">
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+    </div>
     </div>
 </body>
 

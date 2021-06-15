@@ -15,9 +15,15 @@ include "menu.php";
 </head>
 
 <body>
+  <?php
+  $user = unserialize($_SESSION['usuario']);
+  if (!$user)
+    header("location../../index.php");
+  ?>
   <table class="table table-hover" id="tabela">
     <thead>
-      <tr><th scope="col">ID #</th>
+      <tr>
+        <th scope="col">ID #</th>
         <th scope="col">Nome do Malte</th>
         <th scope="col">Tipo do Malte</th>
         <th scope="col"></th>
@@ -25,29 +31,25 @@ include "menu.php";
       </tr>
     </thead>
     <tbody>
-    <?php
-   
-   include_once '../../Model/Malte.php';
- 
-   $malte = array();
-   $malte = unserialize($_SESSION['malte']);
+      <?php
 
-   foreach($malte as $u){
-       $id = $u['id'];
-       $nome = $u['nome'];
-<<<<<<< HEAD
-       $tipo = $u['tipo_malte'];
-=======
-        $tipo = $u['tipo_malte'];
->>>>>>> 9e5e320b2ebbbe428728fdea795818b44843622a
-       echo "<tr>
+      include_once '../../Model/Malte.php';
+
+      $malte = array();
+      $malte = unserialize($_SESSION['malte']);
+
+      foreach ($malte as $u) {
+        $id = $u['id'];
+        $nome = $u['nome'];
+        $tipomalte = $u['tipo_malte'];
+        echo "<tr>
        <td>$id</td>
        <td>$nome</td>
        <td>$tipo</td>
        <td><a href='../../Controller/malteController.php?operation=deletar&id=$id'><img src='../../resources/icons/delete.png' width='20' height='20'></a></td>
      </tr>";
-   }
-   ?>
+      }
+      ?>
     </tbody>
   </table>
 </body>

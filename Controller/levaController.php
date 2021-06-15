@@ -19,10 +19,7 @@ function criar(){
         $levaDao= new LevaDAO();
         $levaDao->create($leva);
         header("location:../View/User/menu.php");
-<<<<<<< HEAD
         
-=======
->>>>>>> 9e5e320b2ebbbe428728fdea795818b44843622a
     }
     else {
         echo "Ocorreram erros ao cadastrar um novo Usuário!";
@@ -47,11 +44,7 @@ function deletar(){
     if(isset($id)){
         $levaDao = new LevaDAO();
         $levaDao->delete($id);
-<<<<<<< HEAD
         listar();
-=======
-       listar();
->>>>>>> 9e5e320b2ebbbe428728fdea795818b44843622a
     }
     else{
         echo "Usuário informado não existe!";

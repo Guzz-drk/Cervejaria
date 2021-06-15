@@ -18,7 +18,6 @@
         else{
             header("location:User/menu.php");  
         }
-     var_dump($_SESSION['usuario'])
     ?>
 </body>
 </html>

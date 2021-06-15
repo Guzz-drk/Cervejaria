@@ -15,6 +15,11 @@ include "menu.php";
 </head>
 
 <body>
+  <?php
+  $user = unserialize($_SESSION['usuario']);
+  if (!$user)
+    header("location../../index.php");
+  ?>
   <table class="table table-hover" id="tabela">
     <thead>
       <tr>
@@ -26,29 +31,29 @@ include "menu.php";
       </tr>
     </thead>
     <tbody>
-    <?php
-   
-        include_once '../../Model/Leva.php';
-      
-        $leva = array();
-        $leva = unserialize($_SESSION['leva']);
+      <?php
 
-        foreach($leva as $u){
-            $id = $u['id'];
-            $data = $u['data_leva'];
-            $tipo = $u['tipo'];
-            $fermento = $u['fermento'];
-            echo "<tr>
+      include_once '../../Model/Leva.php';
+
+      $leva = array();
+      $leva = unserialize($_SESSION['leva']);
+
+      foreach ($leva as $u) {
+        $id = $u['id'];
+        $data = $u['data_leva'];
+        $tipo = $u['tipo'];
+        $fermento = $u['fermento'];
+        echo "<tr>
             <td>$id</td>
             <td>$data</td>
             <td>$tipo</td>
             <td>$fermento</td>
             <td><a href='../../Controller/levaController.php?operation=deletar&id=$id'><img src='../../resources/icons/delete.png' width='20' height='20'></a></td>
           </tr>";
-        }
-        
-    
-    ?>
+      }
+
+
+      ?>
     </tbody>
   </table>
 </body>

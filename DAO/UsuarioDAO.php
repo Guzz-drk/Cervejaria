@@ -10,7 +10,7 @@ class UsuarioDAO{
     public function create($usuario){
         try {
             $stmt = $this->connection->prepare(
-                "INSERT INTO usuarios (nome,dataNasc,email,senha,numbrassagens,cursoscerv) VALUES(?,?,?,?,?,?)");
+                "INSERT INTO usuarios (nome,dataNasc,email,senha,numbrassagens,cursoscerv) VALUES(?,?,?,md5(?),?,?)");
             $stmt->bindValue(1,$usuario->nome);
             $stmt->bindValue(2,$usuario->dataNascimento);
             $stmt->bindValue(3,$usuario->emailUsuario);
@@ -56,7 +56,7 @@ class UsuarioDAO{
 
     public function find($email, $senha){
         try{
-            $statement = $this->connection->prepare("SELECT * FROM usuarios WHERE email = ? and senha = ?");
+            $statement = $this->connection->prepare("SELECT * FROM usuarios WHERE email = ? and senha = md5(?)");
             $statement->bindValue(1, $email);
             $statement->bindValue(2, $senha);
             $statement->execute();
