@@ -1,5 +1,5 @@
 <?php
-include "User/menu.php";
+include_once "User/menu.php";
     session_start();
 ?>
 <!DOCTYPE html>

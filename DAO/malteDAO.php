@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../percistencia/connectionDB.php';
+include_once '../percistencia/connectionDB.php';
 
 
 Class MalteDAO{

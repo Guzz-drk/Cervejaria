@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include '../Model/Fermento.php';
-include '../DAO/fermentoDAO.php';
+include_once '../Model/Fermento.php';
+include_once '../DAO/fermentoDAO.php';
 
 function criar(){
     $erros = array();

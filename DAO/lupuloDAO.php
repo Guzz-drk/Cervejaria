@@ -1,5 +1,5 @@
 <?php
-include '../percistencia/connectionDB.php';
+include_once '../percistencia/connectionDB.php';
 
 
 Class lupuloDAO{

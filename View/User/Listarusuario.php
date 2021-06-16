@@ -31,7 +31,7 @@ session_start();
 
 
       <?php
-      include 'menu.php';
+      include_once 'menu.php';
       if (isset($_SESSION['users'])) {
         include_once '../../Model/Usuario.php';
 

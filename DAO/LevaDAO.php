@@ -1,5 +1,5 @@
 <?php
-include '../percistencia/connectionDB.php';
+include_once '../percistencia/connectionDB.php';
 
 
 Class LevaDAO{
@@ -12,12 +12,16 @@ Class LevaDAO{
     public function create($leva){
         try {
             $stmt = $this->connection->prepare(
-                "INSERT INTO leva (data_leva,tipo,fervura_inicio,fervura_fim,fermento) VALUES(?,?,?,?,?)");
+                "INSERT INTO leva (data_leva,tipo,fervura_inicio,fervura_fim,fermento,fermentog,agua,lupulo) VALUES(?,?,?,?,?,?,?,?)");
             $stmt->bindValue(1,$leva->data);
             $stmt->bindValue(2,$leva->tipoLeva);
             $stmt->bindValue(3,$leva->fervuraini);
             $stmt->bindValue(4,$leva->fervurafinal);
             $stmt->bindValue(5,$leva->fermento);
+            $stmt->bindValue(6,$leva->fermentog);
+            $stmt->bindValue(7,$leva->agua);
+            $stmt->bindValue(8,$leva->lupulo);
+
             $stmt->execute();
             $this->connection=null;
         } catch(PDOException $erros){

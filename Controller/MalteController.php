@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include '../Model/Malte.php';
-include '../DAO/malteDAO.php';
+include_once '../Model/Malte.php';
+include_once '../DAO/malteDAO.php';
 
 function criar(){
     $erros = array();

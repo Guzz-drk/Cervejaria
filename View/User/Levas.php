@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "menu.php";
+include_once "menu.php";
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ include "menu.php";
             </div>
             <div class="form-group">
                 <p>Tipo de Leva</p>
-                <input type="text" class="form-control" id="tipoLeva" name="tipoLeva" required>
+                <input type="text" class="form-control" id="tipoLeva" placeholder="ex.: Pilsen" name="tipoLeva" required>
             </div>
             <div class="form-group">
                 <p>Fervura Inicial</p>
@@ -44,16 +44,38 @@ include "menu.php";
             </div>
             <div class="form-group">
                 <p>Fermento</p>
-                <input type="text" class="form-control" id="fermentoLeva" name="fermento" required>
-                <input type="number" step="0.1" class="form-control" id="fermentog" name="fermentog" required>
+                <select name="fermento" class="form-control">
+                <option value="#" selected>selecione o tipo de Fermento</option>
+                    <?php
+                    $fermentos = array();
+                    $fermentos = unserialize($_SESSION['fermentos']);
+                    var_dump($fermentos);
+                    foreach ($fermentos as $fermento) : ?>
+                        <option value="<?= $fermento['id'] ?>"> <?= $fermento['nome']?></option>
+                    <?php endforeach; ?>
+                </select>
+                <input type="number" step="0.1" class="form-control" id="fermentog" name="fermentog" placeholder="quantiedade de fermento" required>
             </div>
             <div class="form-group">
                 <p>Água</p>
-                <input type="number" step="0.1" class="form-control" id="aguaLeva" name="aguaLeva" required>
+                <input type="number" placeholder="litragem de agua" step="0.1" class="form-control" id="aguaLeva" name="aguaLeva" required>
             </div>
-            
+            <p>lupulo</p>
+            <select name="lupulo" class="form-control">
+                <option value="#" selected>selecione o tipo de Lupulo</option>
+                    <?php
+                    $lupulos = array();
+                    $lupulos = unserialize($_SESSION['lupulos']);
+                    foreach ($lupulos as $lupulo) : ?>
+                        <option value="<?= $lupulo['id'] ?>"> <?= $lupulo['nome']?></option>
+                    <?php endforeach; ?>
+                </select>
+                <br>
             <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
+    </div>
+
+    
+    </form>
     </div>
 </body>
 

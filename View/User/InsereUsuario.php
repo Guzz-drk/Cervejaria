@@ -1,4 +1,4 @@
-<?php include "menu.php";
+<?php include_once "menu.php";
 session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">

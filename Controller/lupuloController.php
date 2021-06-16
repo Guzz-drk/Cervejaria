@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include '../Model/Lupulo.php';
-include '../DAO/lupuloDAO.php';
+include_once '../Model/Lupulo.php';
+include_once '../DAO/lupuloDAO.php';
 
 function criar(){
     $erros = array();

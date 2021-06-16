@@ -1,8 +1,13 @@
 <?php
 
 session_start();
-include '../Model/Leva.php';
-include '../DAO/LevaDAO.php';
+include_once '../Model/Leva.php';
+include_once '../DAO/LevaDAO.php';
+include_once '../Model/Fermento.php';
+include_once '../DAO/fermentoDAO.php';
+include_once '../Model/Lupulo.php';
+include_once '../DAO/lupuloDAO.php';
+
 
 function criar(){
     $erros = array();
@@ -15,7 +20,9 @@ function criar(){
         $leva->fervuraini = $_POST['fervuraInicio'];
         $leva->fervurafinal= $_POST['fervuraFim'];
         $leva->fermento = $_POST['fermento'];
-       
+        $leva->fermentog = $_POST['fermentog'];
+        $leva->agua=$_POST['aguaLeva'];
+        $leva->lupulo=$_POST['lupulo'];
         $levaDao= new LevaDAO();
         $levaDao->create($leva);
         header("location:../View/User/menu.php");
@@ -50,10 +57,21 @@ function deletar(){
         echo "Usuário informado não existe!";
     }
 }
+function formulario(){
+    $fermento = new fermentoDAO();
+    $fermentos = $fermento->search();
+    $_SESSION['fermentos'] = serialize($fermentos);
+    $lupulo = new lupuloDAO();
+    $lupulos = $lupulo->search();
+    $_SESSION['lupulos'] = serialize($lupulos);
+    header("location:../View/User/Levas.php");
+
+}
 
     $operacao = $_GET['operation'];
     if(isset($operacao)){
         switch($operacao){
+          
             case 'cadastrar';
                 criar();
                 break;
@@ -66,7 +84,14 @@ function deletar(){
             case 'deletar';
                 deletar();
                 break;
-        }
+            case 'form';
+                formulario();
+                break;
+           
+            }
     }
 ?>
 
+
+
+ 

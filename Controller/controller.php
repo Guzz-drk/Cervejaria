@@ -1,8 +1,8 @@
 <?php
 session_start();
-include '../Model/Usuario.php';
-include '../Include/UsuarioValidate.php';
-include '../DAO/UsuarioDAO.php';
+include_once '../Model/Usuario.php';
+include_once '../Include/UsuarioValidate.php';
+include_once '../DAO/UsuarioDAO.php';
 
 function criar(){
     $erros = array();

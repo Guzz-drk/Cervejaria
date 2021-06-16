@@ -6,7 +6,10 @@ class Leva{
     var $fervuraini;
     var $fervurafinal;
     var $fermento;
+    var $fermentog;
+    var $agua;
     var $lupulo;
+    
     public function __construct(){
         
     }

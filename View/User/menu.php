@@ -79,7 +79,7 @@ session_start();
               Levas<img src="../../resources/icons/pote-magico.png" width="20" height="20">
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/View/User/Levas.php">Cadastrar Levas <img src="../../resources/icons/add.png" width="20" height="20"></a>
+              <a class="dropdown-item" href="../../Controller/levaController.php?operation=form">Cadastrar Levas <img src="../../resources/icons/add.png" width="20" height="20"></a>
               <a class="dropdown-item" href="../../Controller/levaController.php?operation=consultar">Listar Levas <img src="../../resources/icons/lista.png" width="20" height="20"></a>
             </div>
           <li class="nav-item active">
