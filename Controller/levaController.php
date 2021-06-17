@@ -7,6 +7,10 @@ include_once '../Model/Fermento.php';
 include_once '../DAO/fermentoDAO.php';
 include_once '../Model/Lupulo.php';
 include_once '../DAO/lupuloDAO.php';
+include_once '../Model/MalteLeva.php';
+include_once '../DAO/MalteLevaDao.php';
+include_once '../DAO/malteDAO.php';
+include_once '../Model/Malte.php';
 
 
 function criar(){
@@ -23,10 +27,12 @@ function criar(){
         $leva->fermentog = $_POST['fermentog'];
         $leva->agua=$_POST['aguaLeva'];
         $leva->lupulo=$_POST['lupulo'];
+
+       
         $levaDao= new LevaDAO();
         $levaDao->create($leva);
-        header("location:../View/User/menu.php");
         
+    listar();
     }
     else {
         echo "Ocorreram erros ao cadastrar um novo Usuário!";
@@ -68,6 +74,50 @@ function formulario(){
 
 }
 
+
+function maltes(){
+    $malte_leva = new MalteLeva;
+            $malte_leva->id_leva=$_POST['id_leva'];
+            $malte_leva->id_malte=$_POST['id_malte'];
+            $malte_leva->quant=$_POST['quant'];
+   
+           $maltelevaDAO = new MalteLevaDAO;
+           $maltelevaDAO->create($malte_leva);
+           
+    header("location:../View/User/Listarlevas.php");
+       
+}
+function detalhes(){
+    $id= $_GET['id'];
+
+    $maltelevaDAO = new MalteLevaDAO();
+    $malteleva = $maltelevaDAO->localiza($id);
+
+    $_SESSION['malteleva'] = serialize($malteleva);
+
+    $levaDAO = new LevaDAO();
+    $leva = $levaDAO->localiza($id);
+
+    $_SESSION['leva'] = serialize($leva);
+
+
+
+
+
+    header("location:../View/User/detalhamento.php?id=$id");
+
+}
+function formmaltes(){
+    $id= $_GET['id'];
+
+    $malte = new malteDAO();
+    $maltes = $malte->search();
+    var_dump($maltes);
+    $_SESSION['maltes'] = serialize($maltes);
+    header("location:../View/User/insereMalte.php?id_leva=$id");
+}
+
+
     $operacao = $_GET['operation'];
     if(isset($operacao)){
         switch($operacao){
@@ -87,7 +137,15 @@ function formulario(){
             case 'form';
                 formulario();
                 break;
-           
+            case 'maltes';
+                maltes();
+                break;
+            case 'detalhes';
+                detalhes();
+                break;
+            case 'formmalte';
+                formmaltes();
+                break;
             }
     }
 ?>

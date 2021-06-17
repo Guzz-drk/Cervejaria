@@ -28,11 +28,11 @@ include_once "menu.php";
         <th scope="col">Tipo de Leva</th>
         <th scope="col">Fermento da Leva</th>
         <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       <?php
-
       include_once '../../Model/Leva.php';
 
       $leva = array();
@@ -48,7 +48,8 @@ include_once "menu.php";
             <td>$data</td>
             <td>$tipo</td>
             <td>$fermento</td>
-            <td><a href='../../Controller/levaController.php?operation=deletar&id=$id'><img src='../../resources/icons/delete.png' width='20' height='20'></a></td>
+            <td><a href='../../Controller/levaController.php?operation=detalhes&id=$id'>detalhes</a></td>
+            <td><a href='../../Controller/levaController.php?operation=deletar&id=$id'><img src='../../resources/icons/delete.png' width='20' height='20'></a></>
           </tr>";
       }
 

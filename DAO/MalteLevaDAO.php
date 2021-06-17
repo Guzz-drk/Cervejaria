@@ -3,24 +3,24 @@ session_start();
 include_once '../percistencia/connectionDB.php';
 
 
-Class MalteDAO{
+Class MalteLevaDAO{
 
     private $connection = null;
     public function __construct()
     {
         $this->connection = connectionDB::getInstance();        
     }
-    public function create($malte){
+    public function create($malte_leva){
         try {
             $stmt = $this->connection->prepare(
-                "INSERT INTO maltes (nome,tipo_malte) VALUES(?,?)");
-            $stmt->bindValue(1,$malte->nome);
-            $stmt->bindValue(2,$malte->tipo_malte);
-            
+                "INSERT INTO malte_levas (id_leva,id_malte,quant) VALUES(?,?,?)");
+            $stmt->bindValue(1,$malte_leva->id_leva);
+            $stmt->bindValue(2,$malte_leva->id_malte);
+            $stmt->bindValue(3,$malte_leva->quant);            
             $stmt->execute();
             $this->connection=null;
         } catch(PDOException $erros){
-            echo "erro ao inserir Malte!";
+            echo "erro ao inserir malteleva!";
             echo $erros;
 
         }
@@ -28,7 +28,7 @@ Class MalteDAO{
 
     public function search(){
         try{
-            $statement = $this->connection->prepare("SELECT * FROM maltes");
+            $statement = $this->connection->prepare("SELECT * FROM malte_levas");
             $statement->execute();
             $dados = $statement->fetchAll();
             $this->connection = null;
@@ -36,27 +36,30 @@ Class MalteDAO{
             return $dados;
             
         } catch (PDOException $e){
-            echo "Ocorreram erros ao consultar malte!";
+            echo "Ocorreram erros ao consultar malte_leva!";
             echo $e;
         }
     }
 
     public function delete($id){
         try{
-            $statement = $this->connection->prepare("DELETE FROM maltes WHERE id = ?");
+            $statement = $this->connection->prepare("DELETE FROM malte_levas WHERE id = ?");
             $statement->bindValue(1, $id);
             $statement->execute();
 
             $this->connection = null;
         } catch (PDOException $e){
-            echo "Erro ao deletar Leva!";
+            echo "Erro ao deletar malte_leva!";
             echo $e;
         }
     }
-    public function localiza($id_malte){
+
+    public function localiza($id_leva){
         try{
-            $statement = $this->connection->prepare("SELECT * FROM maltes where id = ?");
-            $statement->bindValue(1, $id_malte);
+            $statement = $this->connection->prepare("select maltes.id,maltes.nome, maltes.tipo_malte from malte_levas 
+            inner join maltes on malte_levas.id_malte = maltes.id
+            where malte_levas.id_leva = ?");
+            $statement->bindValue(1, $id_leva);
             $statement->execute();
             $dados = $statement->fetchAll();
             $this->connection = null;
@@ -64,7 +67,7 @@ Class MalteDAO{
             return $dados;
             
         } catch (PDOException $e){
-            echo "Ocorreram erros ao consultar malte!";
+            echo "Ocorreram erros ao consultar malte_leva!";
             echo $e;
         }
     }

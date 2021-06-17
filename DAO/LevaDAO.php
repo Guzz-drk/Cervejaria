@@ -58,6 +58,25 @@ Class LevaDAO{
             echo $e;
         }
     }
+    public function localiza($id_leva){
+        try{
+            $statement = $this->connection->prepare('select fermento.nome as "nome_fermento",fermento.tipo as "tipo_fermento",
+            fermento.marca as "marca_fermento", leva.*, lupulo.nome as "nome_lupulo",
+            lupulo.tipo as "tipo_lupulo", lupulo.origem as "origem_lupulo"
+            from leva inner join fermento on leva.fermento = fermento.id inner join lupulo as lupulo on leva.lupulo = lupulo.id
+            where leva.id = ?');
+            $statement->bindValue(1, $id_leva);
+            $statement->execute();
+            $dados = $statement->fetchAll();
+            $this->connection = null;
+
+            return $dados;
+            
+        } catch (PDOException $e){
+            echo "Ocorreram erros ao consultar malte_leva!";
+            echo $e;
+        }
+    }
 
 }
 
