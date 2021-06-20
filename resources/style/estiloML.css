@@ -1,0 +1,27 @@
+.fundo{
+    background: transparent;
+    background-repeat: cover;
+    height: 700px;
+    width: 100%;
+}
+
+.card{
+    float: left;
+    display: block;
+    box-sizing: border-box;
+    height: 500px;
+    width: 350px;
+    background-color: rgba(37,37,39,0.9);
+    margin-right: 50px;
+    color: white;
+    text-align: center;
+}
+
+.card p{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.card h4{
+    padding-bottom: 20px;
+}
