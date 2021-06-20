@@ -12,11 +12,11 @@ Class LevaDAO{
     public function create($leva){
         try {
             $stmt = $this->connection->prepare(
-                "INSERT INTO leva (data_leva,tipo,fervura_inicio,fervura_fim,fermento,fermentog,agua,lupulo) VALUES(?,?,?,?,?,?,?,?)");
+                "INSERT INTO leva (data_leva,tipo,primeira_rampa,temp_primeira_rampa,fermento,fermentog,agua,lupulo) VALUES(?,?,?,?,?,?,?,?)");
             $stmt->bindValue(1,$leva->data);
             $stmt->bindValue(2,$leva->tipoLeva);
-            $stmt->bindValue(3,$leva->fervuraini);
-            $stmt->bindValue(4,$leva->fervurafinal);
+            $stmt->bindValue(3,$leva->primeira_rampa);
+            $stmt->bindValue(4,$leva->temp_primeira_rampa);
             $stmt->bindValue(5,$leva->fermento);
             $stmt->bindValue(6,$leva->fermentog);
             $stmt->bindValue(7,$leva->agua);

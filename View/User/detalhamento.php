@@ -19,8 +19,9 @@ foreach ($levas as $leva){
 $nome_fermento=$leva['nome_fermento'];
 $tipo_fermento=$leva['tipo_fermento'];
 $marca_fermento=$leva['marca_fermento'];
+$primeira_rampa=$leva['primeira_rampa'];
+$temperatura_rampa=$leva['temp_primeira_rampa'];
 $data_leva=$leva['data_leva'];
-$tipo_fermento=$leva['tipo_fermento'];
 $agua=$leva['agua'];
 $fermentog=$leva['fermentog'];
 $nome_lupulo=$leva['nome_lupulo'];
@@ -36,15 +37,20 @@ $agua<br>
 $fermentog<br>
 $nome_lupulo<br>
 $tipo_lupulo<br>
-$origem_lupulo<br>";
+$origem_lupulo<br>
+$primeira_rampa<br>
+$temperatura_rampa<br>";
 }
 
-
+$cont=1;
 foreach ($maltelevas as $malteleva) {
+    
     $nome=$malteleva['nome'];
     $quantiedade=$malteleva['quant'];
-    echo"$nome<br>
+    echo"Malte $cont <br>
+        $nome<br>
         $quantiedade<br>";
+    $cont++;
 }
 
 

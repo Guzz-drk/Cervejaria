@@ -21,8 +21,8 @@ function criar(){
 
         $leva->data = $_POST['dataLeva'];
         $leva->tipoLeva = $_POST['tipoLeva'];
-        $leva->fervuraini = $_POST['fervuraInicio'];
-        $leva->fervurafinal= $_POST['fervuraFim'];
+        $leva->primeira_rampa = $_POST['primeira_rampa'];
+        $leva->temp_primeira_rampa= $_POST['temp_primeira_rampa'];
         $leva->fermento = $_POST['fermento'];
         $leva->fermentog = $_POST['fermentog'];
         $leva->agua=$_POST['aguaLeva'];

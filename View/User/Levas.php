@@ -35,12 +35,12 @@ include_once "menu.php";
                 <input type="text" class="form-control" id="tipoLeva" placeholder="ex.: Pilsen" name="tipoLeva" required>
             </div>
             <div class="form-group">
-                <p>Fervura Inicial</p>
-                <input type="datetime-local" class="form-control" id="fervuraInicioLeva" name="fervuraInicio" required>
+                <p>Tempo Primeira rampa de temperatura</p>
+                <input type="text" class="form-control" id="primeira_rampa" name="primeira_rampa" placeholder="ex.:00:40" required>
             </div>
             <div class="form-group">
-                <p>Fervura Final</p>
-                <input type="datetime-local" class="form-control" id="fervuraFimLeva" name="fervuraFim" required>
+                <p>temperatura primeira rampa de temperatura</p>
+                <input type="text" class="form-control" id="temp_primeira_rampa" name="temp_primeira_rampa" placeholder="ex.:70" required>
             </div>
             <div class="form-group">
                 <p>Fermento</p>
