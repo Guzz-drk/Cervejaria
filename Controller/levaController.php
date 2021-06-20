@@ -84,7 +84,7 @@ function maltes(){
            $maltelevaDAO = new MalteLevaDAO;
            $maltelevaDAO->create($malte_leva);
            
-    header("location:../View/User/Listarlevas.php");
+    listar();
        
 }
 function detalhes(){

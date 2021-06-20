@@ -56,7 +56,7 @@ Class MalteLevaDAO{
 
     public function localiza($id_leva){
         try{
-            $statement = $this->connection->prepare("select maltes.id,maltes.nome, maltes.tipo_malte from malte_levas 
+            $statement = $this->connection->prepare("select maltes.id,maltes.nome, maltes.tipo_malte, malte_levas.* from malte_levas 
             inner join maltes on malte_levas.id_malte = maltes.id
             where malte_levas.id_leva = ?");
             $statement->bindValue(1, $id_leva);

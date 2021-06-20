@@ -42,7 +42,9 @@ $origem_lupulo<br>";
 
 foreach ($maltelevas as $malteleva) {
     $nome=$malteleva['nome'];
-    echo"$nome<br>";
+    $quantiedade=$malteleva['quant'];
+    echo"$nome<br>
+        $quantiedade<br>";
 }
 
 
