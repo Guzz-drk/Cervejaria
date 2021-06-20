@@ -33,7 +33,23 @@ function listar(){
 }
 
 function atualizar(){
-    echo "Metodo de atualizar";
+    $id=$_GET['id'];
+    $lupulo = new lupuloDAO();
+    $lupuloa = $lupulo->veratt($id);
+    $_SESSION['lupulo']= serialize($lupuloa);
+    header("location:../view/User/Lupulo.php");
+}
+function update(){
+    $id=$_GET['id'];
+    $nome=$_POST['nomeLupulo'];
+    $tipo=$_POST['tipoLupulo'];
+    $origem=$_POST['origemLupulo'];
+    $lupulo = new lupuloDAO();
+    $lupulo->atualizar($id,$nome,$tipo,$origem);
+    unset($_SESSION['lupulo']);
+    listar();
+
+
 }
 
 function deletar(){
@@ -62,6 +78,9 @@ function deletar(){
                 break;
             case 'deletar';
                 deletar();
+                break;
+            case 'update';
+                update();
                 break;
         }
     }

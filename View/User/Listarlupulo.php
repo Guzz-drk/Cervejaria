@@ -28,6 +28,7 @@ include_once "menu.php";
         <th scope="col">Tipo do Lúpulo</th>
         <th scope="col">Origem do Lúpulo</th>
         <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
       <?php
 
@@ -46,6 +47,8 @@ include_once "menu.php";
        <td>$nome</td>
        <td>$tipo</td>
        <td>$origem</td>
+       <td>
+       <a href='../../Controller/lupuloController.php?operation=atualizar&id=$id'><img src='../../resources/icons/editar-arquivo.png' width='20' height='20' alt=''></a></td>
        <td><a href='../../Controller/lupuloController.php?operation=deletar&id=$id'><img src='../../resources/icons/delete.png' width='20' height='20'></a></td>
      </tr>";
       }

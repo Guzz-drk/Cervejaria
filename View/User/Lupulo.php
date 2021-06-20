@@ -22,23 +22,34 @@ include_once "menu.php";
     $user = unserialize($_SESSION['usuario']);
     if (!$user)
         header("location../../index.php");
-    ?>
+    $lupulos = unserialize($_SESSION['lupulo']);
+    foreach ($lupulos as $lupulo) {
+    $id = $lupulo['id'];
+    $nome = $lupulo['nome'];
+    $tipo = $lupulo['tipo'];
+    $origem = $lupulo['origem'];
+    }?>
     <div class="cadastro">
         <h2>Cadastrar Lúpulo</h2>
-        <form action="../../Controller/lupuloController.php?operation=cadastrar" method="POST">
+        <?php if(!$lupulo)
+        echo'<form action="../../Controller/lupuloController.php?operation=cadastrar" method="POST">';
+        else echo "<form action='../../Controller/lupuloController.php?operation=update&id=$id' method='POST'>";?>
+
             <div class="form-group">
                 <p>Nome</p>
-                <input type="text" class="form-control" id="nomeLupulo" name="nomeLupulo" required>
+                <input type="text" class="form-control" id="nomeLupulo" name="nomeLupulo" value="<?=$nome?>" required>
             </div>
             <div class="form-group">
                 <p>Tipo de Lúpulo</p>
-                <input type="text" class="form-control" id="tipoLupulo" name="tipoLupulo" required>
+                <input type="text" class="form-control" id="tipoLupulo" name="tipoLupulo" value="<?=$tipo?>" required>
             </div>
             <div class="form-group">
                 <p>Origem do Lúpulo</p>
-                <input type="text" class="form-control" id="origemLupulo" name="origemLupulo" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+                <input type="text" class="form-control" id="origemLupulo" name="origemLupulo" value="<?=$origem?>" required>
+            </div><?php if (!$lupulo)
+                        echo '<button type="submit" class="btn btn-primary">Enviar</button>';
+                    else echo '<button type="submit" class="btn btn-primary">Atualizar</button>';
+                    ?>
         </form>
     </div>
 </body>
