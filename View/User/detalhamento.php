@@ -1,10 +1,9 @@
 <?php
 session_start();
 include_once "menu.php";
-echo "
-<span>  <a href='../../Controller/levaController.php?operation=formmalte&id=$id'>Inserir Malte</a> </span>
-";
 $id = $_GET['id'];
+echo "<span>  </span>";
+
 
 $maltelevas = array();
 $maltelevas = unserialize($_SESSION['malteleva']);
@@ -22,27 +21,15 @@ foreach ($levas as $leva) {
     $nome_lupulo = $leva['nome_lupulo'];
     $tipo_lupulo = $leva['tipo_lupulo'];
     $origem_lupulo = $leva['origem_lupulo'];
+    $temp = $leva['temp_primeira_rampa'];
+    $primeira = $leva['primeira_rampa'];
 }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../resources/style/estiloML.css">
-    <title>Document</title>
-</head>
+<link rel="stylesheet" href="../../resources/style/estiloML.css">
 
 <body>
     <?php
@@ -54,24 +41,30 @@ foreach ($levas as $leva) {
     <section>
         <div class="fundo">
             <div id="card1" class="card">
+                <img src="../../resources/icons/fermento.png" alt="">
                 <h4>Fermento</h2>
-                    <p>Nome: <?php echo "$nome_fermento" ?></p>
-                    <p>Tipo: <?php echo "$tipo_fermento" ?></p>
-                    <p>Marca: <?php echo "$marca_fermento" ?></p>
-                    <p>Quantidade: <?php echo "$fermentog" ?></p>
+                    <p><b>Nome:</b><br> <?=$nome_fermento?></p>
+                    <p><b>Tipo:</b><br> <?=$tipo_fermento?></p>
+                    <p><b>Marca:</b><br><?=$marca_fermento?></p>
+                    <p><b>Quantidade:</b><br><?=$fermentog?></p>
             </div>
             <div id="card2" class="card">
+                <img src="../../resources/icons/hop.png" alt="">
                 <h4>Lúpulo</h4>
-                <p>Nome: <?php echo "$nome_lupulo" ?></p>
-                <p>Tipo: <?php echo "$tipo_lupulo" ?></p>
-                <p>Origem: <?php echo "$origem_lupulo" ?></p>
+                <p><b>Nome:</b><br><?=$nome_lupulo?></p>
+                <p><b>Tipo:</b><br><?=$tipo_lupulo?></p>
+                <p><b>Origem:</b><br><?=$origem_lupulo?></p>
             </div>
             <div id="card3" class="card">
+                <img src="../../resources/icons/pote-magico.png" alt="">
                 <h4>Leva</h4>
-                <p>Data: <?php echo "$data_leva" ?></p>
-                <p>Quantidade de água: <?php echo "$agua" . PHP_EOL . 'ml' ?></p>
+                <p><b>Primeira Rampa:</b> <br><?= $primeira . " minutos" ?> </p>
+                <p><b>Temperatura:</b><br><?= $temp . " C º" ?></p>
+                <p><b>Data:</b><br><?=$data_leva?></p>
+                <p><b>Quantidade de água:</b><br><?=$agua  . 'Litros' ?></p>
             </div>
             <div id="card4" class="card">
+                <img src="../../resources/icons/cerveja.png" alt="">
                 <?php
                 $cont = 1;
                 foreach ($maltelevas as $malteleva) {
@@ -80,11 +73,12 @@ foreach ($levas as $leva) {
                     $quantiedade = $malteleva['quant'];
 
                     echo "<h4>Malte $cont</h4>";
-                    echo "<p>Nome: $nome</p>";
-                    echo "<p>Quantidade: $quantiedade</p>";
+                    echo "<p><b>Nome:</b><br> $nome</p>";
+                    echo "<p><b>Quantidade:</b><br> $quantiedade</p>";
                     $cont++;
                 }
                 ?>
+                <h5><a class="h5" href='../../Controller/levaController.php?operation=formmalte&id=$id'>Inserir Malte</a></h5>
             </div>
         </div>
     </section>
