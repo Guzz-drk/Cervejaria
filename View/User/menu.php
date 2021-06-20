@@ -90,14 +90,6 @@ session_start();
       </div>
     </nav>
   </div>
-  <h2 class="nos">Sobre Nós</h2>
-  <p class="nos" id="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Donec sodales turpis vel tincidunt luctus. Morbi sollicitudin a sapien hendrerit egestas. <br>
-    Vestibulum varius iaculis lorem, ut convallis purus laoreet non. Mauris augue diam, <br> tincidunt eu tempor vel,
-    dignissim sit amet ipsum. Nunc et eleifend enim. <br> Etiam gravida elit nec orci euismod, at pharetra ex imperdiet. <br>
-    Ut metus metus, auctor et lorem eu, finibus venenatis neque. <br> Mauris sed imperdiet sapien. In at nisi vitae est fringilla congue. <br>
-    Etiam ultricies tincidunt dui eleifend pretium. <br> Cras et turpis aliquam, pellentesque risus sit amet, mattis dolor. In risus libero, <br>
-    blandit et elit quis, dictum ullamcorper neque. <br> Nunc euismod feugiat eros, eu gravida urna porttitor a.
-    Donec commodo diam sit amet pharetra semper. <br> Nunc suscipit eget augue eget rhoncus.</p>
 </body>
 
 
