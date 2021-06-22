@@ -26,13 +26,29 @@ function criar(){
 function listar(){
    $malteDao = new malteDAO();
     $malte = $malteDao->search();
-    $_SESSION['malte'] = serialize($malte);
+    $_SESSION['maltes'] = serialize($malte);
     header("location:../View/User/Listarmalte.php");
    
 }
 
 function atualizar(){
-    echo "Metodo de atualizar";
+    $id=$_GET['id'];
+    $malte = new malteDAO();
+    $maltea = $malte->veratt($id);
+    $_SESSION['malte']= serialize($maltea);
+    header("location:../view/User/malte.php");
+}
+function update(){
+    $id=$_GET['id'];
+    $nome=$_POST['nomeMalte'];
+    $tipo=$_POST['tipoMalte'];
+    $malte = new malteDAO();
+    $malte->atualizar($id,$nome,$tipo);
+    unset($_SESSION['malte']);
+    unset($_SESSION['malte']);
+    listar();
+
+
 }
 
 function deletar(){
@@ -43,7 +59,7 @@ function deletar(){
         listar();
     }
     else{
-        echo "Usuário informado não existe!";
+        echo "malte informado não existe!";
     }
 }
 
@@ -61,6 +77,9 @@ function deletar(){
                 break;
             case 'deletar';
                 deletar();
+                break;
+            case 'update';
+                update();
                 break;
         }
     }

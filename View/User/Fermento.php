@@ -24,21 +24,43 @@ include_once "menu.php";
         header("location../../index.php");
     ?>
     <div class="cadastro">
+        <?php $fermentos = unserialize($_SESSION['fermento']);
+    foreach ($fermentos as $fermento) {
+    $id = $fermento['id'];
+    $nome = $fermento['nome'];
+    $tipo = $fermento['tipo'];
+    $marca = $fermento['marca'];
+    }
+    if(!$fermento){
+        echo"
         <h2>Cadastrar Fermento</h2>
-        <form action="../../Controller/fermentoController.php?operation=cadastrar" method="POST">
+        <form action='../../Controller/fermentoController.php?operation=cadastrar' method='POST'>";
+    }
+    else
+    echo "
+    <h2>Atualizar Fermento</h2>
+    <form action='../../Controller/fermentoController.php?operation=update&id=$id' method='POST'>";
+    
+    ?>       
             <div class="form-group">
                 <p>Nome:</p>
-                <input type="text" class="form-control" id="nomeFermento" name="nomeFermento" required>
+                <input type="text" class="form-control" id="nomeFermento" name="nomeFermento" value="<?=$nome?>" required>
             </div>
             <div class="form-group">
                 <p>Tipo de Fermento</p>
-                <input type="text" class="form-control" id="tipoFermento" name="tipoFermento" required>
+                <input type="text" class="form-control" id="tipoFermento" name="tipoFermento" value="<?=$tipo?>" required>
             </div>
             <div class="form-group">
                 <p>Marca do Fermento</p>
-                <input type="text" class="form-control" id="marcaFermento" name="marcaFermento" required>
+                <input type="text" class="form-control" id="marcaFermento" name="marcaFermento" value="<?=$marca?>" required>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <?php
+            if(!$fermento){
+            echo "<button type='submit' class='btn btn-primary'>Enviar</button>";}
+            else{
+            echo "<button type='submit' class='btn btn-primary'>Atualizar</button>";
+        }
+            ?>
         </form>
     </div>
 </body>

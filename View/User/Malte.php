@@ -24,17 +24,34 @@ include_once "menu.php";
         header("location../../index.php");
     ?>
     <div class="cadastro">
-        <h2>Cadastrar Malte</h2>
-        <form action="../../Controller/MalteController.php?operation=cadastrar" method="POST">
+    <?php
+     $maltes = unserialize($_SESSION['malte']);
+     foreach ($maltes as $malte) {
+     $id = $malte['id'];
+     $nome = $malte['nome'];
+     $tipo = $malte['tipo_malte'];
+     }
+    if(!$maltes)
+    echo"<h2>Cadastrar Malte</h2>
+        <form action='../../Controller/MalteController.php?operation=cadastrar' method='POST'>";
+    else
+    echo"<h2>Atualizar Malte</h2>
+    <form action='../../Controller/malteController.php?operation=update&id=$id' method='POST'>";
+        ?>
             <div class="form-group">
                 <p>Nome</p>
-                <input type="text" class="form-control" id="nomeMalte" name="nomeMalte" required>
+                <input type="text" class="form-control" id="nomeMalte" name="nomeMalte" value="<?=$nome?>" required>
             </div>
             <div class="form-group">
                 <p>Tipo de Malte</p>
-                <input type="text" class="form-control" id="tipoMalte" name="tipoMalte" required>
+                <input type="text" class="form-control" id="tipoMalte" name="tipoMalte" value="<?=$tipo?>" required>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <?php
+            if(!$maltes)
+            echo"<button type='submit' class='btn btn-primary'>Enviar</button>";
+            else
+            echo"<button type='submit' class='btn btn-primary'>Atualizar</button>";?>
+            
         </form>
     </div>
 </body>

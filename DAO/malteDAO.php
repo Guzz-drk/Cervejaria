@@ -68,4 +68,25 @@ Class MalteDAO{
             echo $e;
         }
     }
+    public function atualizar($id,$nome,$tipo)
+    {
+        $statement = $this->connection->prepare("UPDATE maltes SET nome= ? ,tipo_malte= ? where id = $id ");
+        $statement->bindvalue(1,$nome);
+        $statement->bindvalue(2,$tipo);
+        $statement->execute();
+    }
+    public function veratt($id)
+    {
+        try {
+
+            $statement = $this->connection->prepare("SELECT * FROM maltes where id = $id");
+            $statement->execute();
+            $malte = $statement->fetchAll();
+            $this->connection = null;
+
+            return $malte;
+        } catch (PDOException $e) {
+            echo 'erro ao tentar verificar lupulo, provavelmente já foi apagado!';
+        };
+    }
 }

@@ -71,4 +71,26 @@ Class MalteLevaDAO{
             echo $e;
         }
     }
+    public function atualizar($id,$nome,$tipo,$marca)
+    {
+        $statement = $this->connection->prepare("UPDATE fermento SET nome= ? ,tipo= ? ,marca= ? where id = $id ");
+        $statement->bindvalue(1,$nome);
+        $statement->bindvalue(2,$tipo);
+        $statement->bindvalue(3,$marca);
+        $statement->execute();
+    }
+    public function veratt($id)
+    {
+        try {
+
+            $statement = $this->connection->prepare("SELECT * FROM fermento where id = $id");
+            $statement->execute();
+            $fermento = $statement->fetchAll();
+            $this->connection = null;
+
+            return $fermento;
+        } catch (PDOException $e) {
+            echo 'erro ao tentar verificar lupulo, provavelmente já foi apagado!';
+        };
+    }
 }

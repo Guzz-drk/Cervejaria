@@ -28,6 +28,7 @@ include_once "menu.php";
         <th scope="col">Tipo do Fermento</th>
         <th scope="col">Marca do Fermento</th>
         <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
       <?php
 
@@ -45,6 +46,7 @@ foreach ($fermento as $u) {
  <td>$nome</td>
  <td>$tipo</td>
  <td>$marca</td>
+ <td><a href='../../Controller/fermentoController.php?operation=atualizar&id=$id'><img src='../../resources/icons/editar-arquivo.png' width='20' height='20' alt=''></a></td>
  <td><a href='../../Controller/fermentoController.php?operation=deletar&id=$id'><img src='../../resources/icons/delete.png' width='20' height='20'></a></td>
 </tr>";
 }

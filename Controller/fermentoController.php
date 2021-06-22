@@ -32,9 +32,6 @@ function listar(){
    
 }
 
-function atualizar(){
-    echo "Metodo de atualizar";
-}
 
 function deletar(){
     $id = $_GET['id'];
@@ -47,6 +44,26 @@ function deletar(){
         echo "fermento informado não existe!";
     }
 }
+function atualizar(){
+    $id=$_GET['id'];
+    $fermento = new FermentoDAO();
+    $fermentoa = $fermento->veratt($id);
+    $_SESSION['fermento']= serialize($fermentoa);
+    header("location:../view/User/Fermento.php");
+}
+function update(){
+    $id=$_GET['id'];
+    $nome=$_POST['nomeFermento'];
+    $tipo=$_POST['tipoFermento'];
+    $origem=$_POST['marcaFermento'];
+    $fermento = new fermentoDAO();
+    $fermento->atualizar($id,$nome,$tipo,$origem);
+    unset($_SESSION['fermento']);
+    listar();
+
+
+}
+
 
     $operacao = $_GET['operation'];
     if(isset($operacao)){
@@ -62,6 +79,9 @@ function deletar(){
                 break;
             case 'deletar';
                 deletar();
+                break;
+            case 'update';
+                update();
                 break;
         }
     }
