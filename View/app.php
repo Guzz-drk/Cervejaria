@@ -16,7 +16,7 @@
                     
         }
         else{
-            header("location:User/menu.php");  
+            header("location:User/index.php");  
         }
     ?>
 </body>
