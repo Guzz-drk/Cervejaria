@@ -77,8 +77,9 @@ foreach ($levas as $leva) {
                     echo "<p><b>Quantidade:</b><br> $quantiedade</p>";
                     $cont++;
                 }
+               echo" <h5><a class='h5' href='../../Controller/levaController.php?operation=formmalte&id=$id'>Inserir Malte</a></h5>";
                 ?>
-                <h5><a class="h5" href='../../Controller/levaController.php?operation=formmalte&id=$id'>Inserir Malte</a></h5>
+                
             </div>
         </div>
     </section>

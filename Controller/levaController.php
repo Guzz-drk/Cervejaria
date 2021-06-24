@@ -117,6 +117,14 @@ function formmaltes(){
     header("location:../View/User/insereMalte.php?id_leva=$id");
 }
 
+function graficos(){
+    $levaDao = new LevaDAO();
+    $leva = $levaDao->search();
+
+    $_SESSION['graficos'] = serialize($leva);
+    header('location:../View/User/index.php');
+
+}
 
     $operacao = $_GET['operation'];
     if(isset($operacao)){
@@ -145,6 +153,9 @@ function formmaltes(){
                 break;
             case 'formmalte';
                 formmaltes();
+                break;
+            case 'graficos';
+                graficos();
                 break;
             }
     }

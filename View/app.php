@@ -16,7 +16,7 @@
                     
         }
         else{
-            header("location:User/index.php");  
+            header("location:../Controller/levacontroller.php?operation=graficos");  
         }
     ?>
 </body>

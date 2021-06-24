@@ -12,7 +12,9 @@ Class MalteLevaDAO{
     }
     public function create($malte_leva){
         try {
+            echo('<script>alert("aqui chegou");</script>');
             $stmt = $this->connection->prepare(
+                
                 "INSERT INTO malte_levas (id_leva,id_malte,quant) VALUES(?,?,?)");
             $stmt->bindValue(1,$malte_leva->id_leva);
             $stmt->bindValue(2,$malte_leva->id_malte);
