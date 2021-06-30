@@ -1,6 +1,11 @@
 <?php
 
+
 session_start();
+$user = unserialize($_SESSION['usuario']);
+if (!$user)
+  header("location../../index.php");
+
 include_once '../Model/Leva.php';
 include_once '../DAO/LevaDAO.php';
 include_once '../Model/Fermento.php';
@@ -112,7 +117,6 @@ function formmaltes(){
 
     $malte = new malteDAO();
     $maltes = $malte->search();
-    var_dump($maltes);
     $_SESSION['maltes'] = serialize($maltes);
     header("location:../View/User/insereMalte.php?id_leva=$id");
 }
@@ -123,6 +127,51 @@ function graficos(){
 
     $_SESSION['graficos'] = serialize($leva);
     header('location:../View/User/index.php');
+
+}
+
+function forminsumos(){
+    $malte = new malteDAO();
+    $maltes = $malte->search();
+    $_SESSION['maltes'] = serialize($maltes);
+    $fermento = new fermentoDAO();
+    $fermentos = $fermento->search();
+    $_SESSION['fermentos'] = serialize($fermentos);
+    $lupulo = new lupuloDAO();
+    $lupulos = $lupulo->search();
+    $_SESSION['lupulos'] = serialize($lupulos);
+    header('location:../view/User/insumos.php');
+
+
+
+}
+
+
+function busca(){
+$lupulo=$_POST['lupulo'];
+$malte=$_POST['malte'];
+$quantmalte=$_POST['quantMalte'];
+$fermento=$_POST['fermento'];
+$quantfermento=$_POST['quantFermento'];
+
+$querry= [
+    "lupulo"=>$lupulo,
+    "malte"=>$malte,
+    "quantmalte"=>$quantmalte,
+    "fermento"=>$fermento,
+    "quantfermento"=> $quantfermento];
+    $ledaDAO= new LevaDAO();
+    $query=$ledaDAO->receitas($querry);
+    foreach($query as $leva){
+    $id=$leva['id_leva'];}
+    header("location:levacontroller.php?operation=detalhes&id=$id");
+
+
+
+
+
+
+
 
 }
 
@@ -156,6 +205,12 @@ function graficos(){
                 break;
             case 'graficos';
                 graficos();
+                break;
+            case 'forminsumos';
+                forminsumos();
+                break;
+                case 'busca';
+                busca();
                 break;
             }
     }

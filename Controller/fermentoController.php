@@ -1,6 +1,8 @@
 <?php
-
 session_start();
+$user = unserialize($_SESSION['usuario']);
+if (!$user){
+  header("location../../index.php");}
 include_once '../Model/Fermento.php';
 include_once '../DAO/fermentoDAO.php';
 

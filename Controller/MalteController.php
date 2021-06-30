@@ -1,6 +1,8 @@
 <?php
-
 session_start();
+$user = unserialize($_SESSION['usuario']);
+if (!$user){
+  header("location../../index.php");}
 include_once '../Model/Malte.php';
 include_once '../DAO/malteDAO.php';
 

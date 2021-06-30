@@ -1,15 +1,13 @@
 <?php
+
 session_start();
 include_once '../Model/Usuario.php';
-include_once '../Include/UsuarioValidate.php';
 include_once '../DAO/UsuarioDAO.php';
 
 function criar(){
     $erros = array();
 
-    if(!UsuarioValidate::validaEmail($_POST['emailUsuario'])){
-        $erros[] = 'E-mail Inválido!';
-    }
+  
 
     if (count($erros) == 0){
         $usuario = new Usuario();
@@ -38,9 +36,6 @@ function listar(){
    
 }
 
-function atualizar(){
-    echo "Metodo de atualizar";
-}
 
 function deletar(){
     $id = $_GET['id'];

@@ -2,6 +2,9 @@
 <?php
 
 session_start();
+$user = unserialize($_SESSION['usuario']);
+if (!$user)
+  header("location:../../index.php");
 ?>
 
 <html lang="en">
@@ -23,9 +26,7 @@ session_start();
 
 <body>
   <?php
-  $user = unserialize($_SESSION['usuario']);
-  if (!$user)
-    header("location../../index.php");
+ 
   ?>
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -82,6 +83,13 @@ session_start();
               <a class="dropdown-item" href="../../Controller/levaController.php?operation=form">Cadastrar Levas <img src="../../resources/icons/add.png" width="20" height="20"></a>
               <a class="dropdown-item" href="../../Controller/levaController.php?operation=consultar">Listar Levas <img src="../../resources/icons/lista.png" width="20" height="20"></a>
             </div>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="../../Controller/levaController.php?operation=forminsumos" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Receitas <img src="../../resources/icons/pote-magico.png" width="20" height="20">
+            </a>   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="../../Controller/levaController.php?operation=forminsumos">Consultar receitas <img src="../../resources/icons/add.png" width="20" height="20"></a>
+            </div>
+          </li>
           <li class="nav-item active">
             <a class="nav-link" href="../../Controller/AutoController.php?operation=logout">Logout <img src="../../resources/icons/logout.png" width="20" height="20"></a>
           </li>

@@ -1,5 +1,8 @@
 <?php
 session_start();
+$user = unserialize($_SESSION['usuario']);
+if (!$user)
+  header("location../../index.php");
 include_once "menu.php";
 $id = $_GET['id'];
 echo "<span>  </span>";

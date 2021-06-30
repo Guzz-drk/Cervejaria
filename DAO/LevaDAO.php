@@ -1,5 +1,10 @@
 <?php
+session_start();
+$user = unserialize($_SESSION['usuario']);
+if (!$user){
+  header("location:../../index.php");}
 include_once '../percistencia/connectionDB.php';
+
 
 
 Class LevaDAO{
@@ -77,6 +82,35 @@ Class LevaDAO{
             echo $e;
         }
     }
+    public function receitas($query){
+        
+        $malte= $query['malte'];
+        $maltequant= $query['quantmalte'];
+        $lupulo=$query['lupulo'];
+        $fermento=$query['fermento'];
+        $quantfermento=$query['quantfermento'];
+        $statement = $this->connection->prepare('select ml.id_leva
+        from leva as l right join malte_levas as ml on ml.id_leva=l.id
+        where ml.id_malte = ? and ml.quant < ? and l.lupulo=? and l.fermento=? and l.fermentog < ?
+        group by ml.id_leva;');
+        $statement->bindValue(1, $malte);
+        $statement->bindValue(2, $maltequant);
+        $statement->bindValue(3, $lupulo);
+        $statement->bindValue(4, $fermento);
+        $statement->bindValue(5, $quantfermento);
+        $statement->execute();
+        $dados = $statement->fetchAll();
+        $this->connection = null;
+
+        return $dados;
+    
+
+
+
+    } 
+
+
+
 
 }
 

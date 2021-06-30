@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once "menu.php";
 ?>
 <!DOCTYPE html>
@@ -14,11 +13,6 @@ include_once "menu.php";
 </head>
 
 <body>
-  <?php
-  $user = unserialize($_SESSION['usuario']);
-  if (!$user)
-    header("location../../index.php");
-  ?>
   <table class="table table-hover" id="tabela">
     <thead>
       <tr>
@@ -32,12 +26,14 @@ include_once "menu.php";
 
 
       <?php
-      include_once 'menu.php';
+      
+session_start();
       if (isset($_SESSION['users'])) {
         include_once '../../Model/Usuario.php';
 
         $users = array();
         $users = unserialize($_SESSION['users']);
+        
 
         foreach ($users as $u) {
           $id = $u['id'];
@@ -50,9 +46,8 @@ include_once "menu.php";
             <td>$brassagens</td>
             <td><a href='../../Controller/controller.php?operation=deletar&id=$id'><img src='../../resources/icons/delete.png' width='20' height='20'></a></td>
           </tr>";
+        
         }
-
-        unset($_SESSION['users']);
       }
       ?>
     </tbody>

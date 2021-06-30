@@ -1,5 +1,8 @@
 <?php include_once "menu.php";
-session_start(); ?>
+session_start();
+$user = unserialize($_SESSION['usuario']);
+if (!$user){
+  header("location../../index.php");} ?>
 <!DOCTYPE html>
 <html lang="en">
 
